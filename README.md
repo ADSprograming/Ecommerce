@@ -1,3 +1,2 @@
 # Ecommerce
-
-E-commerce de Produtos eletrônicos.
+Projeto Java Corporativo usando JSF e Hibernate

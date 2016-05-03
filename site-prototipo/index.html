@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site de ecommerce responsivo">
+    <meta name="keywords" content="Ecommerce,responsivo">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="sóstenes freitas">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="img/ecommerce-icon.png">
+    
+    <title>Ecommerce</title>
+</head>
+<body>
+   <!-------------CABEÇALHO DA PAGINA---------------->
+    <header class="cabecalho container">
+        <a href="index.html">
+            <h2 class="logo">Ecommerce </h2>
+        </a>
+        <button class="btn-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
+        <nav class="menu">
+               <a  class="btn-close"><i class="fa fa-times"></i></a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+        </nav>
+    </header>
+   <!-------------BANNER---------------->
+    <div class="banner container">
+        <div class="title">
+            <h2>Ecommerce miojo</h2>
+            <h3>Vende tudo e pa ta ligado não doido</h3>
+        </div>
+        <div class="buttons">
+        <button class="btn btn-cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i></button>
+        <button class="btn btn-sobre"> Sobre <i class="fa fa-question-circle"></i></button>
+        </div>
+   </div>
+   <!-------------MAIN---------------->
+    <main class="servicos">
+       <article class="servico">
+        <a href="#"><img src="img/65808_index_gg.jpg" alt="Campanhas"></a>
+        <div class="inner">
+            <a href="#"> Gigabyte GTX980Ti 6gb G1 Gaming DDR5</a>
+            <h4>R$ 3.892,90 à vista</h4>
+            <p> - Clock eficaz de memória: 7010MHz
+                - Tamanho da memória: 6GB
+                - Interface de memória: 384-Bit
+                - Tipo de memória: GDDR5</p>
+        </div>   
+       </article>
+       <article class="servico">
+        <a href="#"><img src="img/66575_index_gg.jpg" alt="Marketing"></a>
+        <div class="inner">
+            <a href="#"> EVGA GeForce GTX980Ti HYBRID</a>
+            <h4>R$ 4.638,90 à vista </h4>
+            <p>- Clock eficaz da Memória: 7010MHz
+                - Tamanho da memória: 6GB
+                - Interface de memória: 384-bit
+                - Tipo de mmória: GDDR5</p>
+        </div>   
+       </article>
+       <article class="servico">
+        <a href="#"><img src="img/71740_index_gg.jpg" alt="Site"></a>
+        <div class="inner">
+            <a href="#"> GigaByte GeForce GTX980Ti Xtreme</a>
+            <h4>R$ 4.067,90 à vista </h4>
+            <p>- Clock eficaz da memória: 7200 MHz
+                - Tamanho da memória: 6 GB
+                - Interface de memória: 384 bit
+                - Tipo de memória: GDDR5</p>
+        </div>   
+       </article>
+   </main>
+    <!-------------NESLETTER---------------->
+    <section class="newsletter container">
+        <h2> Inscreva-se agora </h2>
+        <h3> Receba novidades </h3>
+        <form action="">
+        <input name="email" type="text" placeholder="Seu email">
+        <button>Cadastrar</button>
+        </form>
+    </section>
+   <!-------------RODAPÉ----------------> 
+    <footer class="rodape container">
+        <div class="social-icons"> 
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+        </div>
+        <p class="copyright">
+            Copyright @ Miojo 2016. Nois que voa.
+        </p>
+    </footer>
+
+<!-------------SCRIPT-JQUERY---------------->
+
+ <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+    $(".btn-menu").click(function(){
+        $(".menu").show();
+    });
+    $(".btn-close").click(function(){
+        $(".menu").hide();
+    });
+    </script>
+    
+    
+</body>
+</html>

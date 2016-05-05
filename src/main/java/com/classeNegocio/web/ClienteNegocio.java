@@ -9,7 +9,9 @@ import com.interfaceNegocio.web.INegocioCliente;
 
 
 public class ClienteNegocio implements INegocioCliente{
-
+	ClienteDAO df = FactoryDAO.getClienteDAO();
+	
+	
 	public void cadastrar(Cliente cl) throws Exception {
 		if (cl == null) {
             throw new Exception("Não é possível cadastrar um objeto nulo");
@@ -50,8 +52,20 @@ public class ClienteNegocio implements INegocioCliente{
         if (cl.getSenha().trim().equals("") == true) {
             throw new Exception("Informe senha");
         }
-        ClienteDAO df = FactoryDAO.getClienteDAO();
+        
         df.inserir(cl);		
+	}
+	
+	public boolean validarLogin (String login, String senha) {
+		Cliente c = new Cliente();
+		
+		c = df.consultarPorNome(login);
+		
+		if (c != null && c.getLogin().equals(login) && c.getSenha().equals(senha)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 }

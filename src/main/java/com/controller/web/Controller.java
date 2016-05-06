@@ -22,16 +22,22 @@ public class Controller {
 	private boolean session;
     private Cliente usuarioLogado;
     private int endereco;
-    public int getEndereco() {
+    Cliente cliente =new Cliente();
+    private String resenha;
+   
+	
+    public String getResenha() {
+		return resenha;
+	}
+	public void setResenha(String resenha) {
+		this.resenha = resenha;
+	}
+	public int getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(int endereco) {
 		this.endereco = endereco;
 	}
-	Cliente cliente =new Cliente();
-	
-
-	
 	public boolean isSession() {
 		return session;
 	}
@@ -50,6 +56,7 @@ public class Controller {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	//METODOS
 	public String efetuarLogin(){
 		
 		ClienteDAO cd =  FactoryDAO.getClienteDAO();

@@ -14,22 +14,24 @@
 <h:body>
 	 <div class="cadastrobox">
         <h:form action="" class="cadastro">
-            <label for="">Nome</label>
+            <label for="">Nome:</label>
             <p:inputText type="text" value="#{controller.cliente.nome}" ></p:inputText>
             
-            <label for="">Email</label>
+            <label for="">Email:</label>
            <p:inputText type="text" value="#{controller.cliente.email}" > </p:inputText>
             
-            <label for="">Cpf</label>
+            <label for="">Cpf:</label>
             <p:inputText type="text" value="#{controller.cliente.cpf}" ></p:inputText>
            
-             <label for="">Login</label>
+             <label for="">Login:</label>
             <p:inputText type="text" value="#{controller.cliente.login}" ></p:inputText>
             
-            <label for="">Senha</label>
-            <p:inputText type="text" value="#{controller.cliente.senha}" ></p:inputText>
+            <label for="">Senha:</label>
+            <p:inputText type="password" value="#{controller.cliente.senha}" ></p:inputText>
            
-             <label for="">Endereco</label>
+           
+            
+             <label for="">Endereco:</label>
             <p:inputText type="text" value="#{controller.endereco}" ></p:inputText>
             
            <h:commandLink action="#{controller.setCliente}"> 

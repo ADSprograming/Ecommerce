@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+ <link rel="icon" href="img/Logo.png"/>
+<title>Cadastro</title>
+</h:head>
+<h:body>
+	 <div class="cadastrobox">
+        <h:form action="" class="cadastro">
+            <label for="">Nome</label>
+            <p:inputText type="text" value="#{controller.cliente.nome}" ></p:inputText>
+            
+            <label for="">Email</label>
+           <p:inputText type="text" value="#{controller.cliente.email}" > </p:inputText>
+            
+            <label for="">Cpf</label>
+            <p:inputText type="text" value="#{controller.cliente.cpf}" ></p:inputText>
+           
+             <label for="">Login</label>
+            <p:inputText type="text" value="#{controller.cliente.login}" ></p:inputText>
+            
+            <label for="">Senha</label>
+            <p:inputText type="text" value="#{controller.cliente.senha}" ></p:inputText>
+           
+             <label for="">Endereco</label>
+            <p:inputText type="text" value="#{controller.endereco}" ></p:inputText>
+            
+           <h:commandLink action="#{controller.setCliente}"> 
+           		<button class="btn-confirma" name="confirma" type="submit"  style="vertical-align:middle">
+           			<span>Confirma</span>
+           		</button>
+           </h:commandLink>
+           
+           <h:commandLink action="#{controller.cancelar}">
+            	<button class="btn-cancelar" name="cancelar" type="submit" style="vertical-align:middle">
+            		<span>Cancelar</span>
+            	</button>
+           </h:commandLink>          
+           
+            <img src="img/Logo.png" alt="Logo"/>
+        </h:form>
+    </div> 
+</h:body>
+</html>

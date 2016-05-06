@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:f="http://java.sun.com/jsf/core"
@@ -6,24 +6,39 @@
 	  xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+ <link rel="icon" href="img/Logo.png"/>
 <title>Login</title>
 </h:head>
 <h:body>
-	<div class="box">
-		<h:form class="login">
-			<p:messages id="msgs"/>
-			<p:outputLabel for="login" value="Login"/>
-			<p:inputText id="login" value="#{controller.login}" required="true" label="Login">
-			<f:validateLength minimum="4"/>
-			</p:inputText>
-			<p:outputLabel for="senha" value="Senha"/>
-			<p:password id="senha" value="#{controller.senha}" feedback="true" required="true" label="Senha" />
-			<h:commandButton value="Logar" action="#{controller.efetuarLogin}"></h:commandButton>
-            <button class="btn-cancelar" style="vertical-align:middle" onclick="index.html"><span>Cancelar</span></button>
-			<img src="Logo.png" alt="Logo"/>
-		</h:form>
+	<div class="box" >
+		<h:form class ="login" >
+       		<p:messages id="msgs" />
+       		<p:outputLabel for="login" value="Login:" />
+            <p:inputText id="login" value="#{controller.cliente.login}"  label="login">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            
+            <p:outputLabel for="senha" value="Senha:" />
+            <p:inputText id="senha" value="#{controller.cliente.senha}"  label="senha">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            
+            <h:commandLink action="#{controller.efetuarLogin}">
+            	<button class ="btn-confirma" name="login" type="submit" style="vertical-align:middle">
+            		<span>Logar</span>
+            	</button>
+            </h:commandLink>
+            	
+             <h:commandLink action="#{controller.cancelar}">
+            	<button class ="btn-cancelar" name="cancelar" type="submit" style="vertical-align:middle">
+            		<span>Cancelar</span>
+            	</button>
+            </h:commandLink>
+            <img src="img/Logo.png" alt="logo"/>
+        
+     </h:form> 
 	</div>
 </h:body>
 </html>

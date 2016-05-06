@@ -3,6 +3,7 @@ package com.classeNegocio.web;
 import com.classeBasica.web.Cliente;
 import com.classeDado.web.ClienteDAO;
 import com.classeDado.web.FactoryDAO;
+
 import com.interfaceNegocio.web.INegocioCliente;
 
 
@@ -56,8 +57,8 @@ public class ClienteNegocio implements INegocioCliente{
         df.inserir(cl);		
 	}
 	
-	public boolean validarLogin (String login, String senha) {
-		Cliente c = new Cliente();
+	public boolean validarLogin (String login,String senha) {
+		Cliente c = null;
 		
 		c = df.consultarPorNome(login);
 		

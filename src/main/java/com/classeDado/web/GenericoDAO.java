@@ -2,12 +2,14 @@ package  com.classeDado.web;
 
 
 	import java.io.Serializable;
-	import java.lang.reflect.ParameterizedType;
-	import java.util.Collection;
+import java.lang.reflect.ParameterizedType;
+import java.util.Collection;
 
 	import javax.persistence.EntityManager;
-	import javax.persistence.EntityTransaction;
-	import javax.persistence.PersistenceException;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
+
+import com.classeBasica.web.Cliente;
 
 
 	public class GenericoDAO <Entidade>{
@@ -119,7 +121,16 @@ package  com.classeDado.web;
 			}
 			return instance;
 		}
-
+		
+		public Cliente consultarPorNome(String login) {
+			Cliente cliente = null;
+			 try{
+				cliente = (Cliente) entityManager.createQuery("FROM Cliente WHERE login ='"+login+"'").getSingleResult();
+			}catch(Exception e){
+				 e.printStackTrace();
+			}
+		  return cliente;
+		   }
 		/**
 		 * Atualiza o objeto que se encontra em memória.
 		 * 

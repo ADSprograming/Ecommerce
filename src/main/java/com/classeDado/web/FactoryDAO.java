@@ -35,10 +35,7 @@ public class FactoryDAO {
 			EnderecoDAO dao = new EnderecoDAO(manager);
 			return dao;
 		}
-		public static PessoaDAO getPessoaDAO(){
-			PessoaDAO dao = new PessoaDAO(manager);
-			return dao;
-		}
+		
 		public static ProdutoDAO getProdutoDAO(){
 			ProdutoDAO dao = new ProdutoDAO(manager);
 			return dao;

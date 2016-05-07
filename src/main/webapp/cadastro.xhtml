@@ -15,26 +15,27 @@
 	 <div class="cadastrobox">
         <h:form action="" class="cadastro">
             <label for="">Nome:</label>
-            <p:inputText type="text" value="#{controller.cliente.nome}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.nome}" ></p:inputText>
             
             <label for="">Email:</label>
-           <p:inputText type="text" value="#{controller.cliente.email}" > </p:inputText>
+           <p:inputText type="text" value="#{clienteBean.email}" > </p:inputText>
             
             <label for="">Cpf:</label>
-            <p:inputText type="text" value="#{controller.cliente.cpf}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.cpf}" ></p:inputText>
            
              <label for="">Login:</label>
-            <p:inputText type="text" value="#{controller.cliente.login}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.login}" ></p:inputText>
             
             <label for="">Senha:</label>
-            <p:inputText type="password" value="#{controller.cliente.senha}" ></p:inputText>
+            <p:inputText type="password" value="#{clienteBean.senha}" ></p:inputText>
            
-           
+           <label for="">Digite novamente:</label>
+            <p:inputText type="password" value="#{clienteBean.re_senha}" ></p:inputText>
             
              <label for="">Endereco:</label>
-            <p:inputText type="text" value="#{controller.endereco}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.endereco}" ></p:inputText>
             
-           <h:commandLink action="#{controller.setCliente}"> 
+           <h:commandLink action="#{clienteBean.setCliente}"> 
            		<button class="btn-confirma" name="confirma" type="submit"  style="vertical-align:middle">
            			<span>Confirma</span>
            		</button>

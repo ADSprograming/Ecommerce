@@ -8,10 +8,8 @@ import javax.faces.bean.ManagedBean;
 
 import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Endereco;
-import com.classeBasica.web.Proprietario;
 import com.classeDado.web.EnderecoDAO;
 import com.classeDado.web.FactoryDAO;
-import com.classeDado.web.ProprietarioDAO;
 import com.classeDado.web.ClienteDAO;
 
 import com.classeNegocio.web.ClienteNegocio;
@@ -23,15 +21,7 @@ public class Controller {
     private Cliente usuarioLogado;
     private int endereco;
     Cliente cliente =new Cliente();
-    private String resenha;
    
-	
-    public String getResenha() {
-		return resenha;
-	}
-	public void setResenha(String resenha) {
-		this.resenha = resenha;
-	}
 	public int getEndereco() {
 		return endereco;
 	}
@@ -75,15 +65,7 @@ public class Controller {
 	public String cancelar(){
 		 return "index.xhtml?faces-redirect=true";
 	}
-	public void setCliente(){
-		
-		Endereco e = new Endereco();
-		ClienteDAO d = FactoryDAO.getClienteDAO();
-		EnderecoDAO ed = FactoryDAO.getEnderecoDAO();
-		e = ed.buscarPorChave(endereco);
-		cliente.setEndereco(e);
-		d.inserir(cliente);
-	}
+	
 
 	
 }

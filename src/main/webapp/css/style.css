@@ -1,12 +1,12 @@
 @CHARSET "ISO-8859-1";
 
 /*==================RESET=========================*/
-* {margin: 0; padding: 0; border: none; box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-size: 100%; outline: none;}
+* {margin: 0; padding: 0; border: none; box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-size: 100%; outline: none; }
 body {background-color: #f5f5f5;}
 ul {list-style: none;}
 a {text-decoration: none;}
 img {max-width: 100%;}
-
+#sai {border:none; background:#f5f5f5;}
 /*===================CONTAINER========================*/
 
 .container {width: 100%; float: left; padding: 3% 4%; text-align: center;}
@@ -36,8 +36,8 @@ img {max-width: 100%;}
 
 /*==================PRODUTOS==========================*/
 
-.servicos { width: 100%; float: left; padding: 3% 4%;}
-.servico { width: 100%; background-color: #fff; text-align: left; border-radius: 7px; margin-bottom: 3%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.servicos { width: 50%; float: left; padding: 3% 4%;}
+.servico { width: 100%; background-color: #fff; text-align: left; border-radius: 7px; margin-bottom: 3%;margin-top:2%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 .servico img {border-radius: 7px 7px 0 0;}
 .inner {padding: 7%;}
 .inner a { font-size: 1.5em; color: #130400;}
@@ -80,9 +80,17 @@ img {max-width: 100%;}
 img {margin-top: 10%;}
 
 /*=============CADASTRO=========================*/
-.cadastrobox {width: 100%; padding: 2% 1%}
-.cadastro {width: 100%; padding: 1%; margin-top: 2%; margin:auto; background-color: #fff; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.cadastrobox {width: 100%; padding: 4%; }
+.cadastro {width: 100%; padding: 3%; margin-top: 2%; margin:auto; background-color: #fff;border-radius:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 .cadastro input{width:100%;float:right;border-radius:5px; padding: 2%; color:#696969; border: 1px solid #696969; } 
+
+/*=============ENDERECO=============================*/
+.cadastro .endereco .cep {width: 80%; padding: 2%; border-radius: 5px 0 0 5px; float:left; margin-top: 2%;  border: 0.5px solid  #696969; }
+.cadastro .endereco .cep-buttom {width:20%;float:right; background-color: #4CAF50; margin-top: 2%; border-radius:  0 5px 5px 0;border: 0.5px solid  #4CAF50; color: #fff; text-align: left; cursor: pointer; padding: 2% 1%;  }
+.cadastro .endereco .cep-buttom i { float: right;}
+.cadastro .endereco .form-left {float: left; width: 50%; margin-top: 2%; border-radius:5px 0 0 5px; margin-right:0;}
+.cadastro .endereco .form-right {float: right; width: 50%; margin-top: 2%; border-radius: 0 5px 5px 0; margin-right:0;}
+.endereco .endeLabel {text-align: left; margin-bottom:5px; margin-top:10px; width:100%;}
 /*==================MOBILE FIRST======================*/
 
 
@@ -96,7 +104,7 @@ img {margin-top: 10%;}
 /*===================TABLET======768PX================*/
 
 @media screen and (min-width: 768px) {
-    .servico {width: 49%;float: left;margin-right: 2%;}
+    .servico {width: 48%;float: left;margin-right: 2%;}
     .servico:nth-child(2) {margin-right: 0;}
     .newsletter h2 {font-size: 2em;}
     .newsletter h3 {font-size: 1.5em;}
@@ -113,7 +121,7 @@ img {margin-top: 10%;}
     .title h2 {font-size: 3em;}
     .title h3 {font-size: 2em;}
     .buttons {width: 30%;float: right;margin-top: 0;}
-    .servico {width: 32%;}
+    .servico {width: 31%;}
     .servico:nth-child(2) {margin-right: 2%;}
     .servico:nth-child(3) {margin-right: 0;}
     .newsletter input{width: 60%;float: none;}
@@ -132,7 +140,8 @@ img {margin-top: 10%;}
     .menu li a {color: #130400;font-size: 1em;padding: 15px;}
     .menu li a:hover {border: none;color: #da6709;}
     .login {width: 30%;}
-    .cadastro{width: 30%;}
+    .cadastrobox {padding:1%;}
+    .cadastro{width: 30%; padding:1%;}
     .cadastro img {margin-top:5%;}
     .cadastro buttom {margin-top:5%;}
     .cadastro label{margin-top:1%; margin-bottom:1%;margin-left:0;}}

@@ -8,33 +8,57 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
- <link rel="icon" href="img/Logo.png"/>
+<link rel="icon" href="img/Logo.png"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+<script src="js/App.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Cadastro</title>
 </h:head>
-<h:body>
-	 <div class="cadastrobox">
+<h:body >
+	<div class="cadastrobox" >
         <h:form action="" class="cadastro">
             <label for="">Nome:</label>
             <p:inputText type="text" value="#{clienteBean.nome}" ></p:inputText>
             
             <label for="">Email:</label>
-           <p:inputText type="text" value="#{clienteBean.email}" > </p:inputText>
+            <p:inputText type="text" value="#{clienteBean.email}" > </p:inputText>
             
             <label for="">Cpf:</label>
             <p:inputText type="text" value="#{clienteBean.cpf}" ></p:inputText>
            
-             <label for="">Login:</label>
+            <label for="">Login:</label>
             <p:inputText type="text" value="#{clienteBean.login}" ></p:inputText>
             
             <label for="">Senha:</label>
             <p:inputText type="password" value="#{clienteBean.senha}" ></p:inputText>
            
-           <label for="">Digite novamente:</label>
+            <label for="">Digite a senha novamente:</label>
             <p:inputText type="password" value="#{clienteBean.re_senha}" ></p:inputText>
             
-             <label for="">Endereco:</label>
-            <p:inputText type="text" value="#{clienteBean.endereco}" ></p:inputText>
+            <div class="endereco">
+            <label class="endeLabel">Endereco:</label>
+            <h:inputText class="cep" value="#{clienteBean.endereco.cep}"/>
             
+            <h:commandLink  action="#{clienteBean.encontra}"><buttom class="cep-buttom">Buscar<i class="fa fa-search" aria-hidden="true"></i></buttom></h:commandLink>
+            <label class="form-left">Logradouro:</label>  
+            <label class="form-right">Bairro:</label>          
+            <h:inputText id="logradouro" type="text" value="#{clienteBean.endereco.logradouro}" name="logradouro" class="form-left" />
+              
+            <h:inputText type="text" value="#{clienteBean.endereco.bairro}"  name="bairro" class="form-right" />
+            <label class="form-left">Cidade:</label> 
+            <label class="form-right">Estado:</label> 
+            <h:inputText type="text" value="#{clienteBean.endereco.cidade}" name="localidade" class="form-left" />
+            
+            <h:inputText type="text" value="#{clienteBean.endereco.estado}" name="uf" class="form-right"  />
+            <label class="form-left">Numero:</label> 
+            <label class="form-left">Complemento:</label> 
+            <h:inputText type="text" value="#{clienteBean.endereco.numero}" name="numero" class="form-left"  />
+            
+            <h:inputText type="text" value="#{clienteBean.endereco.complemento}" name="complemento" class="form-right"  />
+            </div>
+            
+           
            <h:commandLink action="#{clienteBean.setCliente}"> 
            		<button class="btn-confirma" name="confirma" type="submit"  style="vertical-align:middle">
            			<span>Confirma</span>

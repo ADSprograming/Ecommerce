@@ -3,13 +3,16 @@ package  com.classeDado.web;
 
 	import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 	import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 
 import com.classeBasica.web.Cliente;
+import com.classeBasica.web.Produto;
 
 
 	public class GenericoDAO <Entidade>{
@@ -131,6 +134,20 @@ import com.classeBasica.web.Cliente;
 			}
 		  return cliente;
 		   }
+		
+		
+		@SuppressWarnings("unchecked")
+		public  List<Produto> consultarProduto(){
+			List<Produto> produtos = null;
+			 try{
+				produtos = (List<Produto>) entityManager.createQuery("FROM Produto ").getResultList();
+			}catch(Exception e){
+				 e.printStackTrace();
+			}
+		  return produtos;
+		   }   
+		     
+		    
 		/**
 		 * Atualiza o objeto que se encontra em memória.
 		 * 

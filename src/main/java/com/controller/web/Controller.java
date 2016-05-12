@@ -7,8 +7,6 @@ import javax.faces.bean.ManagedBean;
 
 
 import com.classeBasica.web.Cliente;
-import com.classeBasica.web.Endereco;
-import com.classeDado.web.EnderecoDAO;
 import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ClienteDAO;
 
@@ -19,15 +17,8 @@ public class Controller {
 	
 	private boolean session;
     private Cliente usuarioLogado;
-    private int endereco;
-    Cliente cliente =new Cliente();
+    private Cliente cliente =new Cliente();
    
-	public int getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(int endereco) {
-		this.endereco = endereco;
-	}
 	public boolean isSession() {
 		return session;
 	}

@@ -1,6 +1,8 @@
 package com.classeBasica.web;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -10,6 +12,7 @@ import javax.persistence.Id;
 public class Proprietario  {
 	
 @Id
+@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idProprietario;
 	public int getIdProprietario() {
 	return idProprietario;

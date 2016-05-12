@@ -20,17 +20,17 @@
 </h:head>
 <h:body>
 	
-    <header class="cabecalho container">
-        <a href="index.html">
+    <header class="cabecalho container" >
+        <a href="index.xhtml">
             <h2 class="logo">Ecommerce </h2>
         </a>
         <button class="btn-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
         <nav class="menu">
                <a  class="btn-close"><i class="fa fa-times"></i></a>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Clientes</a></li>
-                    <li><a href="#">Serviços</a></li>
+                    <li><a href="index.xhtml">Home</a></li>
+                    <li><a href="login.xhtml">Login</a></li>
+                    <li><a href="cadastro.xhtml">Cadastre-se</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Quem Somos</a></li>
                     <li><a href="#">Contato</a></li>
@@ -51,42 +51,23 @@
         <button class="btn btn-sobre"> Sobre <i class="fa fa-question-circle"></i></button>
         </div>
    </div>
+ 	  <p:dataScroller value="#{produtoBean.produtos}" var="produto" chunkSize="10" id="sai">
+       
+       	<div class="servico">
+        		<p:graphicImage library="images" name="#{produto.idProduto}.jpg" />
+            	<div class="inner">
  
-    <main class="servicos">
-       <article class="servico">
-        <a href="#"><img src="img/65808_index_gg.jpg" alt="Campanhas"></img></a>
-        <div class="inner">
-            <a href="#"> Gigabyte GTX980Ti 6gb G1 Gaming DDR5</a>
-            <h4>R$ 3.892,90 à vista</h4>
-            <p> - Clock eficaz de memória: 7010MHz
-                - Tamanho da memória: 6GB
-                - Interface de memória: 384-Bit
-                - Tipo de memória: GDDR5</p>
-        </div>   
-       </article>
-       <article class="servico">
-        <a href="#"><img src="img/66575_index_gg.jpg" alt="Marketing"></img></a>
-        <div class="inner">
-            <a href="#"> EVGA GeForce GTX980Ti HYBRID</a>
-            <h4>R$ 4.638,90 à vista </h4>
-            <p>- Clock eficaz da Memória: 7010MHz
-                - Tamanho da memória: 6GB
-                - Interface de memória: 384-bit
-                - Tipo de mmória: GDDR5</p>
-        </div>   
-       </article>
-       <article class="servico">
-        <a href="#"><img src="img/71740_index_gg.jpg" alt="Site"></img></a>
-        <div class="inner">
-            <a href="#"> GigaByte GeForce GTX980Ti Xtreme</a>
-            <h4>R$ 4.067,90 à vista </h4>
-            <p>- Clock eficaz da memória: 7200 MHz
-                - Tamanho da memória: 6 GB
-                - Interface de memória: 384 bit
-                - Tipo de memória: GDDR5</p>
-        </div>   
-       </article>
-   </main>
+                   <a><h:outputText value="#{produto.marca}" /><p:spacer width="20" height="20" /> 
+                   <h:outputText value="#{produto.nome}" /></a>
+                   <h4><h:outputText value="#{produto.preco}" /></h4>
+                   <p> <h:outputText value="#{produto.descricao}" /></p>
+                </div>
+            
+        
+        </div>
+	
+    
+</p:dataScroller>
    
     <section class="newsletter container">
         <h2> Inscreva-se agora </h2>

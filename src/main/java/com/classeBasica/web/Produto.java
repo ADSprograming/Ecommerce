@@ -3,11 +3,14 @@ package com.classeBasica.web;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 @Entity
 public class Produto {
 	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idProduto;
 	private double preco;
 	private String nome,descricao,marca;
@@ -19,10 +22,10 @@ public class Produto {
 	public void setCompras(Set<Compra> compras) {
 		this.compras = compras;
 	}
-	public int getId() {
+	public int getIdProduto() {
 		return idProduto;
 	}
-	public void setId(int idProduto) {
+	public void setIdProduto(int idProduto) {
 		this.idProduto = idProduto;
 	}
 	public String getNome() {

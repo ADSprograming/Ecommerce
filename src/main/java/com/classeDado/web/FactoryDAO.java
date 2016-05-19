@@ -48,4 +48,8 @@ public class FactoryDAO {
 			VendaDAO dao = new VendaDAO(manager);
 			return dao;
 		}
+		public static CarrinhoDAO getCarrinhoDAO(){
+			CarrinhoDAO dao = new CarrinhoDAO(manager);
+			return dao;
+		}
 }

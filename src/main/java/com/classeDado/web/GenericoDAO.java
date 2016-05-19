@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 
+import com.classeBasica.web.Carrinho;
 import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Produto;
 
@@ -146,7 +147,17 @@ import com.classeBasica.web.Produto;
 			}
 		  return produtos;
 		   }   
-		     
+		   
+		@SuppressWarnings("unchecked")
+		public  List<Carrinho> consultarCarrinho(){
+			List<Carrinho> carrinho = null;
+			 try{
+				carrinho = (List<Carrinho>) entityManager.createQuery("FROM Carrinho ").getResultList();
+			}catch(Exception e){
+				 e.printStackTrace();
+			}
+		  return carrinho;
+		   } 
 		    
 		/**
 		 * Atualiza o objeto que se encontra em memória.

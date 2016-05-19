@@ -22,7 +22,7 @@
             </p:inputText>
             
             <p:outputLabel for="senha" value="Senha:" />
-            <p:inputText id="senha" value="#{controller.cliente.senha}"  label="senha">
+            <p:inputText id="senha" type="password" value="#{controller.cliente.senha}"  label="senha" >
                 <f:validateLength minimum="2" />
             </p:inputText>
             
@@ -33,7 +33,7 @@
             </h:commandLink>
             	
              <h:commandLink action="#{controller.cancelar}">
-            	<button class ="btn-cancelar" name="cancelar" type="submit" style="vertical-align:middle">
+            	<button class ="btn-cancelar" name="cancelar" type="submit" style="vertical-align:middle;">
             		<span>Cancelar</span>
             	</button>
             </h:commandLink>

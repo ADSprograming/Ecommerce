@@ -31,7 +31,8 @@
             <p:inputText type="text" value="#{clienteBean.login}" ></p:inputText>
             
             <label for="">Senha:</label>
-            <p:inputText type="password" value="#{clienteBean.senha}" ></p:inputText>
+            <p:password id="feedback" value="#{clienteBean.senha}" feedback="true" />
+            
            
             <label for="">Digite a senha novamente:</label>
             <p:inputText type="password" value="#{clienteBean.re_senha}" ></p:inputText>
@@ -40,19 +41,19 @@
             <label class="endeLabel">Endereco:</label>
             <h:inputText class="cep" value="#{clienteBean.endereco.cep}"/>
             
-            <h:commandLink  action="#{clienteBean.encontra}"><buttom class="cep-buttom">Buscar<i class="fa fa-search" aria-hidden="true"></i></buttom></h:commandLink>
-            <label class="form-left">Logradouro:</label>  
-            <label class="form-right">Bairro:</label>          
+            <h:commandLink  action="#{clienteBean.encontra}"><buttom class="cep-buttom">Buscar</buttom></h:commandLink>
+            <label class="form-label-left">Logradouro:</label>  
+            <label class="form-label-right">Bairro:</label>          
             <h:inputText id="logradouro" type="text" value="#{clienteBean.endereco.logradouro}" name="logradouro" class="form-left" />
               
             <h:inputText type="text" value="#{clienteBean.endereco.bairro}"  name="bairro" class="form-right" />
-            <label class="form-left">Cidade:</label> 
-            <label class="form-right">Estado:</label> 
+            <label class="form-label-left">Cidade:</label> 
+            <label class="form-label-right">Estado:</label> 
             <h:inputText type="text" value="#{clienteBean.endereco.cidade}" name="localidade" class="form-left" />
             
             <h:inputText type="text" value="#{clienteBean.endereco.estado}" name="uf" class="form-right"  />
-            <label class="form-left">Numero:</label> 
-            <label class="form-left">Complemento:</label> 
+            <label class="form-label-left">Numero:</label> 
+            <label class="form-label-left">Complemento:</label> 
             <h:inputText type="text" value="#{clienteBean.endereco.numero}" name="numero" class="form-left"  />
             
             <h:inputText type="text" value="#{clienteBean.endereco.complemento}" name="complemento" class="form-right"  />

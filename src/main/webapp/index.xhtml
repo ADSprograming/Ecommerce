@@ -54,22 +54,26 @@
  	  <p:dataScroller value="#{produtoBean.produtos}" var="produto" chunkSize="10" id="sai">
        
        	<div class="servico">
+        	<h:form>	
         		<p:graphicImage library="images" name="#{produto.idProduto}.jpg" />
             	<div class="inner">
- 
-                   <a><h:outputText value="#{produto.marca}" /><p:spacer width="20" height="20" /> 
+ 		
+                   <a><h:outputText value="#{produto.marca}" /><p:spacer width="20" height="20" />
                    <h:outputText value="#{produto.nome}" /></a>
-                   <h4><h:outputText value="#{produto.preco}" /></h4>
-                   <p> <h:outputText value="#{produto.descricao}" /></p>
+                   <h4><h:outputText value="#{produto.preco}" ><f:convertNumber currencySymbol="R$" type="currency"/>
+					</h:outputText></h4>
+                   
+                   <h:commandLink action="#{carrinhoBean.popularCarrinho(produto.idProduto)}">
+            	   <button class="btn-confirma" style="vertical-align:middle;width:100%;border-radius:5px;margin-bottom:2%;"><span>Comprar</span></button>
+                   </h:commandLink>
+                   <h7>Copyright @ Miojo 2016.</h7>
                 </div>
-            
-        
+              </h:form>  
         </div>
-	
-    
+        
 </p:dataScroller>
    
-    <section class="newsletter container">
+    <section class="newsletter container" style="background-color: #130400;">
         <h2> Inscreva-se agora </h2>
         <h3> Receba novidades </h3>
         <form action="">
@@ -90,8 +94,6 @@
             Copyright @ Miojo 2016. Nois que voa.
         </p>
     </footer>
-
-
 
  <script src="js/jquery-1.12.3.min.js"></script>
     <script>

@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -14,7 +16,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Compra extends Venda{
 	@Id
-	
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idCompra;
 	private String precoTotal;
 	private int desconto;

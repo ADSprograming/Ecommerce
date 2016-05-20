@@ -13,6 +13,7 @@ import java.util.List;
 
 
 
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -23,12 +24,13 @@ import com.classeBasica.web.Produto;
 import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProdutoDAO;
 import com.classeNegocio.web.ProdutoNegocio;
+import com.fachada.web.FachadaProduto;
 
  
 @ManagedBean
 @ViewScoped
 public class ProdutoBean  {
-    
+    FachadaProduto fp = new FachadaProduto();
     private List<Produto> produtos;
    
 	@ManagedProperty("#{produtoService}")

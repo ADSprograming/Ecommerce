@@ -13,23 +13,25 @@ import com.classeBasica.web.Endereco;
 import com.classeDado.web.EnderecoDAO;
 import com.classeDado.web.FactoryDAO;
 import com.classeNegocio.web.ClienteNegocio;
+import com.fachada.web.FachadaCliente;
 @ManagedBean
 public class ClienteBean {
-	private String nome,senha,re_senha,email,cpf,login;
+	private String senha,re_senha;
 	JSONObject jsonObject;
 	JSONParser parser = new JSONParser();	
 	private Endereco endereco = new Endereco();  
+	private Cliente cliente = new Cliente();
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 	public Endereco getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 	public String getSenha() {
 		return senha;
@@ -42,24 +44,6 @@ public class ClienteBean {
 	}
 	public void setRe_senha(String re_senha) {
 		this.re_senha = re_senha;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		this.login = login;
 	}
 	
 	public void encontra() {
@@ -83,19 +67,13 @@ public class ClienteBean {
 	
 	public String setCliente(){
 		
-		EnderecoDAO edao = FactoryDAO.getEnderecoDAO();
-		edao.inserir(endereco);
-		Cliente c = new Cliente();
-		ClienteNegocio cn = new ClienteNegocio();
+		FachadaCliente fc = new FachadaCliente();
+		fc.iniciarFachada();
+		fc.setEndereco(endereco);
 		try {
-			if(senha.equals(re_senha)) {
-				c.setLogin(login);
-				c.setEmail(email);
-				c.setNome(nome);
-				c.setCpf(cpf);
-				c.setSenha(senha);
-				c.setEndereco(endereco);
-				cn.cadastrar(c);
+			if(cliente.getSenha().equals(re_senha)) {
+				cliente.setEndereco(endereco);
+				fc.setCliente(cliente);
 			}
 		}catch(Exception x){
 			

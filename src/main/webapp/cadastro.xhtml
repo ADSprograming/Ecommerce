@@ -19,19 +19,19 @@
 	<div class="cadastrobox" >
         <h:form action="" class="cadastro">
             <label for="">Nome:</label>
-            <p:inputText type="text" value="#{clienteBean.nome}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.cliente.nome}" ></p:inputText>
             
             <label for="">Email:</label>
-            <p:inputText type="text" value="#{clienteBean.email}" > </p:inputText>
+            <p:inputText type="text" value="#{clienteBean.cliente.email}" > </p:inputText>
             
             <label for="">Cpf:</label>
-            <p:inputText type="text" value="#{clienteBean.cpf}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.cliente.cpf}" ></p:inputText>
            
             <label for="">Login:</label>
-            <p:inputText type="text" value="#{clienteBean.login}" ></p:inputText>
+            <p:inputText type="text" value="#{clienteBean.cliente.login}" ></p:inputText>
             
             <label for="">Senha:</label>
-            <p:password id="feedback" value="#{clienteBean.senha}" feedback="true" />
+            <p:inputText id="senha" value="#{clienteBean.cliente.senha}" ></p:inputText>
             
            
             <label for="">Digite a senha novamente:</label>

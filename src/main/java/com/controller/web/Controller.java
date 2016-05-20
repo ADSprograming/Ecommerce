@@ -6,18 +6,17 @@ import javax.faces.bean.ManagedBean;
 
 
 
-import com.classeBasica.web.Cliente;
-import com.classeDado.web.FactoryDAO;
-import com.classeDado.web.ClienteDAO;
 
-import com.classeNegocio.web.ClienteNegocio;
+import com.classeBasica.web.Cliente;
+
+import com.fachada.web.FachadaLogin;
 
 @ManagedBean
 public class Controller {
 	
 	private boolean session;
     private Cliente usuarioLogado;
-    private Cliente cliente =new Cliente();
+    private Cliente cliente = new Cliente();
    
 	public boolean isSession() {
 		return session;
@@ -28,9 +27,7 @@ public class Controller {
 	public Cliente getUsuarioLogado() {
 		return usuarioLogado;
 	}
-	public void setUsuarioLogado(Cliente usuarioLogado) {
-		this.usuarioLogado = usuarioLogado;
-	}
+	
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -39,11 +36,11 @@ public class Controller {
 	}
 	//METODOS
 	public String efetuarLogin(){
+		FachadaLogin fl = new FachadaLogin();
 		
-		ClienteDAO cd =  FactoryDAO.getClienteDAO();
-		ClienteNegocio cn = new ClienteNegocio();
-		boolean valida = cn.validarLogin(cliente.getLogin(),cliente.getSenha());
-		usuarioLogado = cd.consultarPorNome(cliente.getLogin());
+		fl.iniciarFachada();
+		boolean valida = fl.validar(cliente.getLogin(),cliente.getSenha());
+		usuarioLogado = fl.consultarNome(cliente.getLogin());
 		
 		if(valida == true){
 			session = true;

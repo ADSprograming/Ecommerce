@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 /*==================RESET=========================*/
-* {margin: 0; padding: 0; border: none; box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-size: 100%; outline: none; }
+* {margin: 0; /*padding: 0;*/ border: none; box-sizing: border-box; font-family: 'Open Sans', sans-serif; font-size: 100%; outline: none; }
 body {background-color: #f5f5f5;}
 ul {list-style: none;}
 a {text-decoration: none;}
@@ -10,14 +10,21 @@ img {max-width: 100%;}
 /*===================CONTAINER========================*/
 
 .container {width: 100%; float: left; padding: 3% 4%; text-align: center;}
+.container1 {width: 100%; float: left; padding: 3% 4%;}
+.containerMenuAdm {float: left; padding: 3% 2% 24% 8%; text-align: center;}
+.containerAdm {width: 60%; float: left; padding: 3% 0 3%; text-align: center;}
+.containercarrinho {width: 100%;float: left;padding: 3% 11% 3%;text-align: center;}
+.cabecalho  {border-bottom: 1px solid #dedede;box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);padding: 20px 0;}
+.btn-produto {float: right;background-color: #4CAF50;border-radius: 5px 5px 5px 5px;;border: 0.5px solid #4CAF50;color: #fff;text-align: center;cursor: pointer;    padding: 0% 25% 0% 29%;width: 106%;margin-top: -10%;margin-right: -10%;}
 
 /*===================HEADER===========================*/
 
-.logo { width: 100px; height: 56px; float: left; background: url(../img/Logo.png) center center/100px no-repeat; font-size: 0; }
+.logo {margin-left: 7%; width: 100px; height: 56px; float: left; background: url(../img/Logo.png) center center/100px no-repeat; font-size: 0; }
+.logoAdmin {margin-left: 7%; width: 100px; height: 56px; float: left; background: url(../img/LogoAdmin.png) center center/100px no-repeat; font-size: 0; }
 .btn-menu { width: 56px; height: 56px; float: right; color: #fff; text-align: center; border-radius: 56px; cursor: pointer; background: linear-gradient(to right, #ce2e3c,#4B0082);}
-.menu { display: none; width: 100%; height: 100%; position: fixed; background-color: rgba(0,0,0,0.76); top: 0; left: 0;}
+.menu {z-index: 1;display: none; width: 100%; height: 100%; position: fixed; background-color: rgba(0,0,0,0.76); top: 0; left: 0;}
 .btn-close { font-size: 1.5em; color: #fff; float: right; cursor: pointer; margin: 2% 3% 0 0;}
-.menu ul { width: 100%; float: left; text-align: center;}
+.menu ul { margin: 0px -10%;width: 100%; float: left; text-align: center;}
 .menu li {padding:1.5%}
 .menu li a { font-size: 2em; color: #fff; padding: 1.5% 3%;}
 .menu li a:hover{ border: 1px solid #da6709;}
@@ -83,10 +90,14 @@ img {max-width: 100%;}
  button span {cursor: pointer;display: inline-block;position: relative;transition: 0.5s;}
 .btn-confirma span:after {content: '✓';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
 .btn-cancelar span:after {content: '✗';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
+.btn-confirmaAdm span:after {content: '✓';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
+.btn-cancelarAdm span:after {content: '✗';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
  button:hover span {padding-right: 25px;}
  button:hover span:after {opacity: 1;right: 0;}
 .btn-confirma {width:50%; padding:5% 5%; background-color: #4CAF50;float:left; margin-top:10%; border-radius: 5px 0 0 5px;  }
 .btn-cancelar {width:50%; padding: 5% 5%; background-color:#FF6347; float:right;margin-top:10%; border-radius: 0 5px 5px 0;}
+.btn-confirmaAdm {width:50%; padding:5% 5%; background-color: #4CAF50;float: right; margin-top:10%; border-radius: 0 5px 5px 0;  }
+.btn-cancelarAdm {width:50%; padding: 5% 5%; background-color:#FF6347; float:left;margin-top:10%; border-radius: 5px 0 0 5px;}
 img {margin-top: 10%;}
 
 /*=============CADASTRO=========================*/
@@ -96,7 +107,7 @@ img {margin-top: 10%;}
 
 /*=============ENDERECO=============================*/
 .cadastro .endereco .cep {width: 80%; padding: 2%; border-radius: 5px 0 0 5px; float:left; margin-top: 2%;  border: 0.5px solid  #696969; }
-.cadastro .endereco .cep-buttom {width:20%;float:right; background-color: #4CAF50; margin-top: 2%; border-radius:  0 5px 5px 0;border: 0.5px solid  #4CAF50; color: #fff; text-align: left; cursor: pointer; padding: 2% 2% 2% 0%;}
+.cadastro .endereco .cep-buttom {width:20%;float:right; background-color: #4CAF50; margin-top: 2%; border-radius:  0 5px 5px 0;border: 0.5px solid  #4CAF50; color: #fff; text-align: center; cursor: pointer; padding: 2% 2% 2% 0%;}
 .cadastro .endereco .form-left {float: left; width: 50%; margin-top: 2%; border-radius:5px 0 0 5px; margin-right:0;}
 .cadastro .endereco .form-right {float: right; width: 50%; margin-top: 2%; border-radius: 0 5px 5px 0; margin-right:0;}
 .cadastro .endereco .form-label-left {float: left; width: 45%; margin-top: 2%; border-radius:5px 0 0 5px; margin-right:0;}
@@ -109,6 +120,7 @@ img {margin-top: 10%;}
 
 @media screen and (min-width: 480px) {
    .logo {width: 214px; background: url(../img/Logo.png) center center/214px no-repeat;}
+   .logoAdmin {width: 214px; background: url(../img/LogoAdmin.png) center center/214px no-repeat;}
    .btn {font-size: 2em;} }
    
 
@@ -159,7 +171,7 @@ img {margin-top: 10%;}
     .cadastro buttom {margin-top:5%;}
     .cadastro label{margin-top:1%; margin-bottom:1%;margin-left:0;}
     .cart{width:20%; margin-left:3%;}
-    .total{width:30%; margin-right: 5%; margin-top:5%;}}
+    .total{width:20%;}}
 
 
 

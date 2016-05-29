@@ -10,18 +10,18 @@ import javax.persistence.Id;
 @Entity
 
 public class Proprietario  {
-	
-@Id
-@GeneratedValue(strategy=GenerationType.TABLE)
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idProprietario;
 	public int getIdProprietario() {
-	return idProprietario;
-}
-public void setIdProprietario(int idProprietario) {
-	this.idProprietario = idProprietario;
-}
+		return idProprietario;
+	}
+	public void setIdProprietario(int idProprietario) {
+		this.idProprietario = idProprietario;
+	}
 	private String nome,email,login,senha;
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -47,7 +47,7 @@ public void setIdProprietario(int idProprietario) {
 		this.senha = senha;
 	}
 	private String cnpj,razaoSocial;
-	
+
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
@@ -60,6 +60,6 @@ public void setIdProprietario(int idProprietario) {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-		
-	
+
+
 }

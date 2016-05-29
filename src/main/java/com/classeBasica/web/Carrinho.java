@@ -22,7 +22,7 @@ public class Carrinho {
 	public void setQtd(int qtd) {
 		this.qtd = qtd;
 	}
-	
+
 	public int getIdCarrinho() {
 		return idCarrinho;
 	}
@@ -59,6 +59,6 @@ public class Carrinho {
 	public void setIpro(int ipro) {
 		this.ipro = ipro;
 	}
-	
-	
+
+
 }

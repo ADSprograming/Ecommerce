@@ -34,7 +34,7 @@ public class Compra extends Venda{
 	public void setBoleto(Boleto boleto) {
 		this.boleto = boleto;
 	}
-	
+
 	public int getIdCompra() {
 		return idCompra;
 	}
@@ -65,5 +65,5 @@ public class Compra extends Venda{
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
+
 }

@@ -1,110 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	 <meta charset="UTF-8"/>
+	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
-	<meta name="description" content="Site de ecommerce responsivo"/>
-    <meta name="keywords" content="Ecommerce,responsivo"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="author" content="sóstenes freitas"/>
-   	<link rel="stylesheet" href="css/style.css" type="text/css" />
-   	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="icon" href="img/Logo.png"/>
-<title>Ecommerce</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+	<meta name="description" content="Site de ecommerce responsivo" />
+	<meta name="keywords" content="Ecommerce,responsivo" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="sÃ³stenes freitas" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans'
+		rel='stylesheet' type='text/css' />
+	<link rel="icon" href="img/Logo.png" />
+	<title>Ecommerce</title>
+	<style>
+.ui-datascroller .ui-datascroller-loader {padding: 0;}
+.ui-datascroller .ui-datascroller-list {padding: 3%}
+.ui-widget-content {border: 0px solid #a8a8a8;background: rgba(255, 255, 255, 0);color: rgba(255, 255, 255, 0);}
+</style>
 </h:head>
 <h:body>
-	
-    <header class="cabecalho container" >
-        <a href="index.xhtml">
-            <h2 class="logo">Ecommerce </h2>
-        </a>
-        <button class="btn-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
-        <nav class="menu">
-               <a  class="btn-close"><i class="fa fa-times"></i></a>
-                <ul>
-                    <li><a href="index.xhtml">Home</a></li>
-                    <li><a href="login.xhtml">Login</a></li>
-                    <li><a href="cadastro.xhtml">Cadastre-se</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><h:outputText value="#{controller.usuarioLogado}"/></li>
-                </ul>
-        </nav>
-    </header>
-   
-    <div class="banner container">
-        <div class="title">
-            <h2>Ecommerce miojo</h2>
-            <h3>Vende tudo e pa ta ligado não doido</h3>
-        </div>
-        <div class="buttons">
-        <a href="cadastro.xhtml">
-        <button class="btn btn-cadastrar"> Cadastrar <i class="fa fa-arrow-circle-right"></i>
-        </button>
-        </a>
-        <button class="btn btn-sobre"> Sobre <i class="fa fa-question-circle"></i></button>
-        </div>
-   </div>
- 	  <p:dataScroller value="#{produtoBean.produtos}" var="produto" chunkSize="10" id="sai">
-       
-       	<div class="servico">
-        	<h:form>	
-        		<p:graphicImage library="images" name="#{produto.idProduto}.jpg" />
-            	<div class="inner">
- 		
-                   <a><h:outputText value="#{produto.marca}" /><p:spacer width="20" height="20" />
-                   <h:outputText value="#{produto.nome}" /></a>
-                   <h4><h:outputText value="#{produto.preco}" ><f:convertNumber currencySymbol="R$" type="currency"/>
-					</h:outputText></h4>
-                   
-                   <h:commandLink action="#{carrinhoBean.popularCarrinho(produto.idProduto)}">
-            	   <button class="btn-confirma" style="vertical-align:middle;width:100%;border-radius:5px;margin-bottom:2%;"><span>Comprar</span></button>
-                   </h:commandLink>
-                   <h7>Copyright @ Miojo 2016.</h7>
-                </div>
-              </h:form>  
-        </div>
-        
-</p:dataScroller>
-   
-    <section class="newsletter container" style="background-color: #130400;">
-        <h2> Inscreva-se agora </h2>
-        <h3> Receba novidades </h3>
-        <form action="">
-        <h:inputText name="email" type="text" placeholder="Seu email"></h:inputText>
-        <button>Cadastrar</button>
-        </form>
-    </section>
-  
-    <footer class="rodape container">
-        <div class="social-icons"> 
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-google"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-envelope"></i></a>
-        </div>
-        <p class="copyright">
-            Copyright @ Miojo 2016. Nois que voa.
-        </p>
-    </footer>
 
- <script src="js/jquery-1.12.3.min.js"></script>
-    <script>
-    $(".btn-menu").click(function(){
-        $(".menu").show();
-    });
-    $(".btn-close").click(function(){
-        $(".menu").hide();
-    });
-    </script>
-    
+	<header class="cabecalho container"> <a href="index.xhtml">
+		<h2 class="logo">Ecommerce</h2>
+	</a>
+	<button class="btn-menu">
+		<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	</button>
+	<nav class="menu"> <a class="btn-close"><i
+		class="fa fa-times"></i></a>
+	<ul>
+		<li><a href="index.xhtml">Home</a></li>
+		<li><a href="login.xhtml">Login</a></li>
+		<li><a href="cadastro.xhtml">Cadastre-se</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Quem Somos</a></li>
+		<li><a href="#">Contato</a></li>
+	</ul>
+	</nav> </header>
+
+	<div class="banner container">
+		<div class="title">
+			<h2>Ecommerce miojo</h2>
+			<h3>Vende tudo e pa ta ligado nÃ£o doido</h3>
+		</div>
+		<div class="buttons">
+			<a href="cadastro.xhtml">
+				<button class="btn btn-cadastrar">
+					Cadastrar <i class="fa fa-arrow-circle-right"></i>
+				</button>
+			</a>
+			<button class="btn btn-sobre">
+				Sobre <i class="fa fa-question-circle"></i>
+			</button>
+		</div>
+	</div>
+	<p:dataScroller value="#{produtoBean.produtos}" var="produto"
+		chunkSize="10" id="sai">
+
+		<div class="servico">
+			<h:form>
+				<p:graphicImage library="images" name="#{produto.imagem}.jpg" />
+				<div class="inner">
+
+					<a><h:outputText value="#{produto.marca}" />
+						<p:spacer width="20" height="20" /> <h:outputText
+							value="#{produto.nome}" /></a>
+					<h4>
+						<h:outputText value="#{produto.preco}">
+							<f:convertNumber currencySymbol="R$" type="currency" />
+						</h:outputText>
+					</h4>
+
+					<h:commandLink
+						action="#{carrinhoBean.popularCarrinho(produto.idProduto)}">
+						<button class="btn-confirma"
+							style="vertical-align: middle; width: 100%; border-radius: 5px; margin-bottom: 2%;">
+							<span>Comprar</span>
+						</button>
+					</h:commandLink>
+					<h7>Copyright @ Miojo 2016.</h7>
+				</div>
+			</h:form>
+		</div>
+
+	</p:dataScroller>
+
+	<section class="newsletter container"
+		style="background-color: #130400;">
+	<h2>Inscreva-se agora</h2>
+	<h3>Receba novidades</h3>
+	<form action="">
+		<h:inputText name="email" type="text" placeholder="Seu email"></h:inputText>
+		<button>Cadastrar</button>
+	</form>
+	</section>
+
+	<footer class="rodape container">
+	<div class="social-icons">
+		<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+			class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google"></i></a>
+		<a href="#"><i class="fa fa-instagram"></i></a> <a href="#"><i
+			class="fa fa-envelope"></i></a>
+	</div>
+	<p class="copyright">Copyright @ Miojo 2016. Nois que voa.</p>
+	</footer>
+
+
+
 </h:body>
 </html>

@@ -5,5 +5,5 @@ import com.classeBasica.web.Compra;
 
 
 public interface INegocioCompra {
-	 void cadastrar(Compra co) throws Exception;
+	void cadastrar(Compra co) throws Exception;
 }

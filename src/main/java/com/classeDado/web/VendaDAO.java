@@ -12,5 +12,5 @@ public class VendaDAO extends GenericoDAO<Venda>{
 		super(em);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 }

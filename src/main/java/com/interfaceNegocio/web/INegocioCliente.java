@@ -6,6 +6,6 @@ import com.classeBasica.web.Cliente;
 
 
 public interface INegocioCliente {
-	 void cadastrar(Cliente cl) throws Exception;
-     
+	void cadastrar(Cliente cl) throws Exception;
+
 }

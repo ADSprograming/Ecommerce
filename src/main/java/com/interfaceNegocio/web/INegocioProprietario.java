@@ -5,6 +5,6 @@ import com.classeBasica.web.Proprietario;
 
 
 public interface INegocioProprietario {
-	 void cadastrar(Proprietario pr) throws Exception;
+	void cadastrar(Proprietario pr) throws Exception;
 
 }

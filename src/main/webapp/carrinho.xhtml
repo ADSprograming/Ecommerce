@@ -1,89 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Site de ecommerce responsivo"/>
-    <meta name="keywords" content="Ecommerce,responsivo"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="author" content="sóstenes freitas"/>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-    <link rel="icon" href="img/Logo.png"/>
-    
-    <title>Carrinho</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Site de ecommerce responsivo" />
+	<meta name="keywords" content="Ecommerce,responsivo" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="sóstenes freitas" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans'
+		rel='stylesheet' type='text/css' />
+	<link rel="icon" href="img/Logo.png" />
+
+	<title>Carrinho</title>
+	<style>
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
+.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255,0.6)), to(rgba(255, 255, 255, 0)));}
+.ui-menu .ui-menuitem-link {width: 100%;}
+.ui-menu .ui-menuitem-text {margin-left: 5%;}
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {font-weight: 100;}
+.ui-button {margin-left: 1%;}
+.ui-selectonemenu .ui-selectonemenu-label {width: 115%}
+.ui-selectonemenu .ui-selectonemenu-trigger {padding: 0 0px;}
+.ui-fieldset, .ui-fieldset .ui-fieldset-legend {width: 100%;}
+.ui-fileupload-simple .ui-fileupload-filename {margin-left: 0.6em;margin-right: 0.6em;font-size: 80%;}
+.ui-button-text-icon-left .ui-button-text {padding: 0.3em 1em 0.3em 1.5em;}
+.ui-button {display: inline-flex;}
+</style>
 </h:head>
 <h:body>
-     
-    <header class="cabecalho container">
-        <a href="index.html">
-            <h2 class="logo">Ecommerce </h2>
-        </a>
-        <button class="btn-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
-        <nav class="menu">
-               <a  class="btn-close"><i class="fa fa-times"></i></a>
-                <ul>
-                    <li><a href="index.xhtml">Home</a></li>
-                    <li><a href="login.xhtml">Login</a></li>
-                    <li><a href="cadastro.xhtml">Cadastre-se</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-        </nav>
-    </header>
-    	            	
-    <div class="boxCart">
-     <p:dataScroller value="#{carrinhoBean.carrinhos}" var="carrinho" chunkSize="10" id="sai">
-   		<h:form>
-     		<div class="cart" style="display:block;">
-     			 <p:graphicImage library="images" name="#{carrinho.ipro}.jpg" />
-       			 <a href="#" style="width:68%;text-align:center;"><h:outputText value="#{carrinho.marca}" /><br/>
-        		 <h:outputText value="#{carrinho.nome}" /></a>
-       			 <h4 style="width:50%;  float:left;">
-       			 	<h:outputText value="#{carrinho.preco}">
-            			<f:convertNumber currencySymbol="R$" type="currency"/>
-            		</h:outputText>
-            	 </h4>
 
-           <select  name="quantidade" id="" class="qtd">
-               <option value="1" selected="selected" label="1">1</option>
-               <option value="2" label="2">2</option>
-               <option value="3" label="3">3</option>
-               <option value="4" label="4">4</option>
-               <option value="5" label="5">5</option>
-               <option value="6" label="6">6</option>
-           </select>  
-              <h:commandLink action="#{carrinhoBean.removerProduto(carrinho.idCarrinho)}" style="float:none;">
-           <button class ="btn-cancelar" name="remover" type="submit" style="vertical-align:middle; float:left; width:100%;  border-radius:0 0 5px 5px; margin:auto;">
-            		<span>Remover</span>
-            	</button>
-           </h:commandLink>   
-    </div> 
-    </h:form> 
-   </p:dataScroller>
-   <h:form>
-     <div class="total" >    	
-        <label for="subTotal" style="width:100%;margin-bottom:1%;">SubTotal: 
-        	<h:outputText value="#{carrinhoBean.total}"><f:convertNumber currencySymbol="R$" type="currency"/></h:outputText>
-        </label>
-        <label for="Frete" style="width:100%;margin-right:10%;margin-bottom:1%;margin-top:1%;">Frete: R$8,00</label>
-        <label for="Totaol" style="width:100%;margin-right:10%;margin-bottom:1%;margin-top:1%;">Total: R$3.900,90</label>
-        <h:commandLink>
-        <button class="btn-confirma" style="vertical-align:middle;width:100%;border-radius:0;"><span>Comprar</span></button>
-        </h:commandLink>
-     </div>
-    </h:form>     
-</div>
-
-
- <script src="js/jquery-1.12.3.min.js"></script>
-    <script>
+	<header class="cabecalho container"> <a href="index.html">
+		<h2 class="logo">Ecommerce</h2>
+	</a>
+	<button class="btn-menu">
+		<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	</button>
+	<nav class="menu"> <a class="btn-close"><i
+		class="fa fa-times"></i></a>
+	<ul>
+		<li><a href="index.xhtml">Home</a></li>
+		<li><a href="login.xhtml">Login</a></li>
+		<li><a href="cadastro.xhtml">Cadastre-se</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Quem Somos</a></li>
+		<li><a href="#">Contato</a></li>
+	</ul>
+	</nav> </header>
+	<div class="containercarrinho">
+		<p:growl id="msgs" showDetail="true" />
+		<p:fieldset legend="Carrinho"
+			style="margin-bottom:20px;text-align: left;">
+			<h:panelGrid columns="2" cellpadding="5"
+				style="width: 100%;float: left;">
+				<div class="boxCart">
+					<p:dataScroller value="#{carrinhoBean.carrinhos}" var="carrinho"
+						chunkSize="10" id="sai">
+						<h:form>
+							<div class="cart" style="display: block;">
+								<p:graphicImage library="images" name="#{carrinho.ipro}.jpg" />
+								<a href="#" style="width: 68%; text-align: center;"><h:outputText
+										value="#{carrinho.marca}" /><br /> <h:outputText
+										value="#{carrinho.nome}" /></a>
+								<h4 style="width: 50%; float: left;">
+									<h:outputText value="#{carrinho.preco}">
+										<f:convertNumber currencySymbol="R$" type="currency" />
+									</h:outputText>
+								</h4>
+								<select name="quantidade" id="" class="qtd">
+									<option value="1" selected="selected" label="1">1</option>
+									<option value="2" label="2">2</option>
+									<option value="3" label="3">3</option>
+									<option value="4" label="4">4</option>
+									<option value="5" label="5">5</option>
+									<option value="6" label="6">6</option>
+								</select>
+								<h:commandLink
+									action="#{carrinhoBean.removerProduto(carrinho.idCarrinho)}"
+									style="float:none;">
+									<button class="btn-cancelar" name="remover" type="submit"
+										style="vertical-align: middle; float: left; width: 100%; border-radius: 0 0 5px 5px; margin: auto;">
+										<span>Remover</span>
+									</button>
+								</h:commandLink>
+							</div>
+						</h:form>
+					</p:dataScroller>
+				</div>
+			</h:panelGrid>
+			<h:panelGrid columns="2" cellpadding="5"
+				style="width: 100%;float: right;">
+				<h:form>
+					<div class="total">
+						<label for="subTotal" style="width: 100%; margin-bottom: 1%;">SubTotal:
+							<h:outputText value="#{carrinhoBean.total}">
+								<f:convertNumber currencySymbol="R$" type="currency" />
+							</h:outputText>
+						</label> <label for="Frete"
+							style="width: 100%; margin-right: 10%; margin-bottom: 1%; margin-top: 1%;">Frete:
+							R$8,00</label> <label for="Totaol"
+							style="width: 100%; margin-right: 10%; margin-bottom: 1%; margin-top: 1%;">Total:
+							R$3.900,90</label>
+						<h:commandLink>
+							<button class="btn-confirma"
+								style="vertical-align: middle; width: 100%; border-radius: 0;">
+								<span>Comprar</span>
+							</button>
+						</h:commandLink>
+					</div>
+				</h:form>
+			</h:panelGrid>
+		</p:fieldset>
+	</div>
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
     $(".btn-menu").click(function(){
         $(".menu").show();
     });
@@ -91,6 +128,6 @@
         $(".menu").hide();
     });
     </script>
-    
+
 </h:body>
 </html>

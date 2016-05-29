@@ -11,25 +11,25 @@
 		rel='stylesheet' type='text/css' />
 	<link rel="icon" href="img/Logo.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Login</title>
+	<title>Login Admin</title>
 </h:head>
 <h:body>
 	<div class="box">
 		<h:form class="login">
 			<p:messages id="msgs" />
 			<p:outputLabel for="login" value="Login:" />
-			<p:inputText id="login" value="#{controller.cliente.login}"
+			<p:inputText id="login" value="#{controller.proprietario.login}"
 				label="login">
 				<f:validateLength minimum="2" />
 			</p:inputText>
 
 			<p:outputLabel for="senha" value="Senha:" />
 			<p:inputText id="senha" type="password"
-				value="#{controller.cliente.senha}" label="senha">
+				value="#{controller.proprietario.senha}" label="senha">
 				<f:validateLength minimum="2" />
 			</p:inputText>
 
-			<h:commandLink action="#{controller.efetuarLogin}">
+			<h:commandLink action="#{controller.efetuarLoginAdmin}">
 				<button class="btn-confirma" name="login" type="submit"
 					style="vertical-align: middle">
 					<span>Logar</span>
@@ -42,8 +42,7 @@
 					<span>Cancelar</span>
 				</button>
 			</h:commandLink>
-			<a style="float: right" href="admin.xhtml">Admin</a>
-			<img src="img/Logo.png" alt="logo" />
+			<img src="img/LogoAdmin.png" alt="logo" />
 
 		</h:form>
 	</div>

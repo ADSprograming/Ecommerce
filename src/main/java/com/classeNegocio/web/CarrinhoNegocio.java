@@ -14,6 +14,6 @@ public class CarrinhoNegocio {
 		List<Carrinho> carrinho = new ArrayList<Carrinho>();
 		carrinho = cd.consultarCarrinho();
 		return carrinho;
-		
+
 	}
 }

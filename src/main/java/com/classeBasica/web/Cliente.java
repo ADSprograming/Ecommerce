@@ -15,18 +15,18 @@ import javax.persistence.OneToMany;
 @Entity
 
 public class Cliente {
-@Id
-@GeneratedValue(strategy=GenerationType.TABLE)
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idCliente;
 	public int getIdCliente() {
-	return idCliente;
-}
-public void setIdCliente(int idCliente) {
-	this.idCliente = idCliente;
-}
+		return idCliente;
+	}
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
 
 	private String nome,email,login,senha;
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -52,38 +52,38 @@ public void setIdCliente(int idCliente) {
 		this.senha = senha;
 	}
 
-private String cpf;
+	private String cpf;
 
-@OneToOne
-private Endereco endereco;
-@OneToMany(mappedBy = "cliente", targetEntity = Compra.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-private Set<Compra> compras;
-@OneToMany(mappedBy = "cliente", targetEntity = Compra.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-private Set<Boleto> boletos;
-public Set<Boleto> getBoletos() {
-	return boletos;
-}
-public void setBoletos(Set<Boleto> boletos) {
-	this.boletos = boletos;
-}
-public String getCpf() {
-	return cpf;
-}
-public void setCpf(String cpf) {
-	this.cpf = cpf;
-}
-public Endereco getEndereco() {
-	return endereco;
-}
-public void setEndereco(Endereco endereco) {
-	this.endereco = endereco;
-}
+	@OneToOne
+	private Endereco endereco;
+	@OneToMany(mappedBy = "cliente", targetEntity = Compra.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Set<Compra> compras;
+	@OneToMany(mappedBy = "cliente", targetEntity = Compra.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Set<Boleto> boletos;
+	public Set<Boleto> getBoletos() {
+		return boletos;
+	}
+	public void setBoletos(Set<Boleto> boletos) {
+		this.boletos = boletos;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
-public Set<Compra> getCompras() {
-	return compras;
-}
-public void setCompras(Set<Compra> compras) {
-	this.compras = compras;
-}
+	public Set<Compra> getCompras() {
+		return compras;
+	}
+	public void setCompras(Set<Compra> compras) {
+		this.compras = compras;
+	}
 
 }

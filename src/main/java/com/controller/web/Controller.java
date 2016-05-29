@@ -6,47 +6,46 @@ import javax.faces.bean.ManagedBean;
 
 
 
+
 import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Proprietario;
 import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProprietarioDAO;
 import com.classeDado.web.ClienteDAO;
-
 import com.classeNegocio.web.ClienteNegocio;
 import com.classeNegocio.web.ProprietarioNegocio;
+import com.fachada.web.FachadaLogin;
 
 @ManagedBean
 public class Controller {
 
 	private boolean session;
-	private Cliente usuarioLogado;
-	private Cliente cliente =new Cliente();
-	private Proprietario usuarioAdminLogado;
-	private Proprietario proprietario =new Proprietario();
-
+    private Cliente usuarioLogado;
+    private Cliente cliente = new Cliente();
+    private Proprietario usuarioAdminLogado;
+    private Proprietario proprietario;
+	
+    public Proprietario getUsuarioAdminLogado() {
+		return usuarioAdminLogado;
+	}
+	public void setUsuarioAdminLogado(Proprietario usuarioAdminLogado) {
+		this.usuarioAdminLogado = usuarioAdminLogado;
+	}
 	public boolean isSession() {
 		return session;
 	}
 	public void setSession(boolean session) {
 		this.session = session;
 	}
-	public Proprietario getUsuarioAdminLogado() {
-		return usuarioAdminLogado;
+	public Cliente getUsuarioLogado() {
+		return usuarioLogado;
 	}
-	public void setUsuarioAdminLogado(Proprietario usuarioAdminLogado) {
-		this.usuarioAdminLogado = usuarioAdminLogado;
-	}
+	
 	public Proprietario getProprietario() {
 		return proprietario;
 	}
 	public void setProprietario(Proprietario proprietario) {
 		this.proprietario = proprietario;
-	}
-	public Cliente getUsuarioLogado() {
-		return usuarioLogado;
-	}
-	public void setUsuarioLogado(Cliente usuarioLogado) {
-		this.usuarioLogado = usuarioLogado;
 	}
 	public Cliente getCliente() {
 		return cliente;
@@ -56,12 +55,12 @@ public class Controller {
 	}
 	//METODOS
 	public String efetuarLogin(){
-
-		ClienteDAO cd =  FactoryDAO.getClienteDAO();
-		ClienteNegocio cn = new ClienteNegocio();
-		boolean valida = cn.validarLogin(cliente.getLogin(),cliente.getSenha());
-		usuarioLogado = cd.consultarPorNome(cliente.getLogin());
-
+		FachadaLogin fl = new FachadaLogin();
+		
+		fl.iniciarFachada();
+		boolean valida = fl.validar(cliente.getLogin(),cliente.getSenha());
+		usuarioLogado = fl.consultarNome(cliente.getLogin());
+		
 		if(valida == true){
 			session = true;
 			return "index.xhtml?faces-redirect=true";
@@ -70,11 +69,10 @@ public class Controller {
 			return "login.xhtml?faces-redirect=true";
 		}
 	}
-
 	public String cancelar(){
-		return "index.xhtml?faces-redirect=true";
+		 return "index.xhtml?faces-redirect=true";
 	}
-
+	
 	public String efetuarLoginAdmin(){
 
 		ProprietarioDAO pd =  FactoryDAO.getProprietarioDAO();

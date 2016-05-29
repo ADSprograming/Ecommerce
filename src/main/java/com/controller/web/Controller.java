@@ -23,7 +23,7 @@ public class Controller {
     private Cliente usuarioLogado;
     private Cliente cliente = new Cliente();
     private Proprietario usuarioAdminLogado;
-    private Proprietario proprietario;
+    private Proprietario proprietario = new Proprietario();
 	
     public Proprietario getUsuarioAdminLogado() {
 		return usuarioAdminLogado;
@@ -56,8 +56,7 @@ public class Controller {
 	//METODOS
 	public String efetuarLogin(){
 		FachadaLogin fl = new FachadaLogin();
-		
-		fl.iniciarFachada();
+		fl.FachadaProprietario();
 		boolean valida = fl.validar(cliente.getLogin(),cliente.getSenha());
 		usuarioLogado = fl.consultarNome(cliente.getLogin());
 		
@@ -74,11 +73,10 @@ public class Controller {
 	}
 	
 	public String efetuarLoginAdmin(){
-
-		ProprietarioDAO pd =  FactoryDAO.getProprietarioDAO();
-		ProprietarioNegocio pn = new ProprietarioNegocio();
-		boolean validaAdmin = pn.validarLoginAdmin(proprietario.getLogin(),proprietario.getSenha());
-		usuarioAdminLogado = pd.consultarPorNomeAdmin(proprietario.getLogin());
+		FachadaLogin fl = new FachadaLogin();
+		fl.FachadaProprietario();
+		boolean validaAdmin = fl.validarLoginAdmin(proprietario.getLogin(),proprietario.getSenha());
+		usuarioAdminLogado = fl.consultarNomeAdmin(proprietario.getLogin());
 
 		if(validaAdmin == true){
 			session = true;

@@ -105,7 +105,7 @@
 									<label for="">Nome:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.nome}"></p:inputText>
+									<p:inputText type="text" value="#{produtoBean.produto.nome}"></p:inputText>
 								</div>
 							</div>
 							<div class="ui-grid-row">
@@ -113,7 +113,7 @@
 									<label for="">Preco:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.preco}"></p:inputText>
+									<p:inputText type="text" value="#{produtoBean.produto.preco}"></p:inputText>
 								</div>
 							</div>
 							<div class="ui-grid-row">
@@ -121,7 +121,7 @@
 									<label for="">Marca:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.marca}"></p:inputText>
+									<p:inputText type="text" value="#{produtoBean.produto.marca}"></p:inputText>
 								</div>
 							</div>
 							<div class="ui-grid-row">
@@ -129,7 +129,7 @@
 									<label for="">Descricao:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputTextarea id="desc" value="#{produtoBean.descricao}"
+									<p:inputTextarea id="desc" value="#{produtoBean.produto.descricao}"
 										required="true" label="Description"></p:inputTextarea>
 								</div>
 							</div>
@@ -170,7 +170,7 @@
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.idProduto}.jpg" width="500" height="500" />
+							name="#{produtoBean.produto.idProduto}.jpg" width="500" height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
 						<h:commandLink action="#{produtoBean.setProdutoCadastar}">
@@ -204,7 +204,7 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-2">
-									<p:selectOneMenu value="#{produtoBean.idProduto}"
+									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
 										update="display" panelStyle="width:190px"
 										style="width:106%;margin-left: 4%;" effect="fold"
 										filter="true" filterMatchMode="startsWith">
@@ -231,7 +231,7 @@
 										<label for="">Preco:</label>
 									</div>
 									<div class="ui-grid-col-3">
-										<p:inputText type="text" value="#{produtoBean.preco}"></p:inputText>
+										<p:inputText type="text" value="#{produtoBean.produto.preco}"></p:inputText>
 									</div>
 								</div>
 								<div class="ui-grid-row">
@@ -239,7 +239,7 @@
 										<label for="">Marca:</label>
 									</div>
 									<div class="ui-grid-col-3">
-										<p:inputText type="text" value="#{produtoBean.marca}"></p:inputText>
+										<p:inputText type="text" value="#{produtoBean.produto.marca}"></p:inputText>
 									</div>
 								</div>
 								<div class="ui-grid-row">
@@ -247,7 +247,7 @@
 										<label for="">Descricao:</label>
 									</div>
 									<div class="ui-grid-col-3">
-										<p:inputTextarea id="desc" value="#{produtoBean.descricao}"
+										<p:inputTextarea id="desc" value="#{produtoBean.produto.descricao}"
 											required="true" label="Description"></p:inputTextarea>
 									</div>
 								</div>
@@ -288,7 +288,7 @@
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.idProduto}.jpg" width="500" height="500" />
+							name="#{produtoBean.produto.idProduto}.jpg" width="500" height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
 						<h:commandLink action="#{produtoBean.setProdutoAlterar}">
@@ -322,7 +322,7 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:selectOneMenu value="#{produtoBean.idProduto}"
+									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
 										update="display" panelStyle="width:190px"
 										style="width:106%;margin-left: 4%;" effect="fold"
 										filter="true" filterMatchMode="startsWith">
@@ -351,7 +351,7 @@
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.idProduto}.jpg" width="500" height="500" />
+							name="#{produtoBean.produto.idProduto}.jpg" width="500" height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
 						<h:commandLink action="#{produtoBean.setProdutoRemover}">

@@ -68,12 +68,20 @@
 </h:head>
 <h:body>
 	<h:form>
-		<p:selectOneMenu value="#{produtoBean.idProduto}" update="display"
-			panelStyle="width:190px" style="width:250px" effect="fold"
-			filter="true" filterMatchMode="startsWith">
+		<p:selectOneMenu value="#{produtoBean.produto}" var="p"
+			update="display" panelStyle="width:190px" style="width:250px"
+			effect="fold" filter="true" filterMatchMode="startsWith">
 			<f:selectItem itemLabel="Selecione o produto" itemValue="#{null}" />
-			<f:selectItems value="#{produtoBean.produtos}" var="p"
-				itemLabel="#{p.marca} - #{p.nome}" itemValue="#{p.idProduto}" />
+			<f:selectItems value="#{produtoBean.produtos}" var="produto" itemLabel="#{produto.marca} - #{produto.nome}" itemValue="#{produto.idProduto}" />
+				
+				
+			<p:column>
+				<p:graphicImage library="images" name="#{produto.idProduto}.jpg"
+					width="40" height="50" />
+			</p:column>
+			<p:column>
+			<h:outputLabel value="#{produto.marca} - #{produto.nome}" />
+            </p:column>
 		</p:selectOneMenu>
 
 		<p:commandButton value="Submit" update="display"
@@ -82,7 +90,7 @@
 		<p:dialog id="display" header="Confirmação" modal="true"
 			showEffect="bounce" widgetVar="dlg" resizable="false">
 			<p:separator />
-			<p:graphicImage library="images" name="#{produtoBean.idProduto}.jpg"
+			<p:graphicImage library="images" name="#{produtoBean.produto.idProduto}.jpg"
 				width="500" height="500" />
 			<p:separator style="margin-bottom: 2%;" />
 

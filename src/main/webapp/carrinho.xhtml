@@ -21,18 +21,55 @@
 	<title>Carrinho</title>
 	<style>
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
-.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255,0.6)), to(rgba(255, 255, 255, 0)));}
-.ui-menu .ui-menuitem-link {width: 100%;}
-.ui-menu .ui-menuitem-text {margin-left: 5%;}
+	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+	{
+	background: #FFFFFF
+		-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255,
+		0.6)), to(rgba(255, 255, 255, 0)));
+}
+
+.ui-menu .ui-menuitem-link {
+	width: 100%;
+}
+
+.ui-menu .ui-menuitem-text {
+	margin-left: 5%;
+}
+
 .ui-state-default, .ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default {font-weight: 100;}
-.ui-button {margin-left: 1%;}
-.ui-selectonemenu .ui-selectonemenu-label {width: 115%}
-.ui-selectonemenu .ui-selectonemenu-trigger {padding: 0 0px;}
-.ui-fieldset, .ui-fieldset .ui-fieldset-legend {width: 100%;}
-.ui-fileupload-simple .ui-fileupload-filename {margin-left: 0.6em;margin-right: 0.6em;font-size: 80%;}
-.ui-button-text-icon-left .ui-button-text {padding: 0.3em 1em 0.3em 1.5em;}
-.ui-button {display: inline-flex;}
+	.ui-widget-header .ui-state-default {
+	font-weight: 100;
+}
+
+.ui-button {
+	margin-left: 1%;
+}
+
+.ui-selectonemenu .ui-selectonemenu-label {
+	width: 115%
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger {
+	padding: 0 0px;
+}
+
+.ui-fieldset, .ui-fieldset .ui-fieldset-legend {
+	width: 100%;
+}
+
+.ui-fileupload-simple .ui-fileupload-filename {
+	margin-left: 0.6em;
+	margin-right: 0.6em;
+	font-size: 80%;
+}
+
+.ui-button-text-icon-left .ui-button-text {
+	padding: 0.3em 1em 0.3em 1.5em;
+}
+
+.ui-button {
+	display: inline-flex;
+}
 </style>
 </h:head>
 <h:body>
@@ -121,13 +158,13 @@
 	</div>
 	<script src="js/jquery-1.12.3.min.js"></script>
 	<script>
-    $(".btn-menu").click(function(){
-        $(".menu").show();
-    });
-    $(".btn-close").click(function(){
-        $(".menu").hide();
-    });
-    </script>
+		$(".btn-menu").click(function() {
+			$(".menu").show();
+		});
+		$(".btn-close").click(function() {
+			$(".menu").hide();
+		});
+	</script>
 
 </h:body>
 </html>

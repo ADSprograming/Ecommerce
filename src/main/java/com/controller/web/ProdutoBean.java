@@ -34,11 +34,7 @@ public class ProdutoBean   {
 	private int idProduto;
 	private String nome,descricao,marca,imagem;
 	private double preco;
-	JSONObject jsonObject;
-	JSONParser parser = new JSONParser();	
-	Produto produto;
-
-
+	Produto produto = new Produto();
 	public Produto getProduto() {
 		return produto;
 	}
@@ -46,42 +42,6 @@ public class ProdutoBean   {
 		this.produto = produto;
 	}
 
-	public int getIdProduto() {
-		return idProduto;
-	}
-	public void setIdProduto(int idProduto) {
-		this.idProduto = idProduto;
-	}
-	public double getPreco() {
-		return preco;
-	}
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}	
-	public String getImagem() {
-		return imagem;
-	}
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
-	}
 	public void Produtos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
@@ -110,16 +70,9 @@ public class ProdutoBean   {
 
 	public String setProdutoCadastar(){
 
-		Produto p = new Produto();
 		ProdutoNegocio pn = new ProdutoNegocio();
-		FileUploadController up = new FileUploadController();
 		try {
-			p.setNome(nome);
-			p.setDescricao(descricao);
-			p.setPreco(preco);
-			p.setMarca(marca);
-			p.setImagem(imagem);
-			pn.cadastrar(p);
+			pn.cadastrar(produto);
 		}catch(Exception x){
 
 		}
@@ -128,15 +81,9 @@ public class ProdutoBean   {
 
 	public String setProdutoAlterar(){
 
-		Produto p = new Produto();
 		ProdutoNegocio pn = new ProdutoNegocio();
 		try {
-			p.setNome(nome);
-			p.setDescricao(descricao);
-			p.setPreco(preco);
-			p.setMarca(marca);
-			p.setImagem(imagem);
-			pn.alterar(p);
+			pn.alterar(produto);
 
 		}catch(Exception x){
 
@@ -146,32 +93,24 @@ public class ProdutoBean   {
 
 	public String setProdutoRemover(){
 
-		Produto p = new Produto();
 		ProdutoNegocio pn = new ProdutoNegocio();
-		try {
-			p.setIdProduto(idProduto);
-			pn.remover(p);
+		try {	
+			pn.remover(produto);
 		} catch (Exception x) {
 
 		}		
 		return "painel.xhtml?faces-redirect=true";
 	}
 
-
+/*
 	public void buscarproduto() {
 		try {
 			ProdutoNegocio pn = new ProdutoNegocio();
-			pn.ResultadoProduto(getIdProduto());
-			setIdProduto(produto.getIdProduto());
-			setNome(produto.getNome());
-			setDescricao(produto.getDescricao());
-			setPreco(produto.getPreco());
-			setMarca(produto.getMarca());
-			setImagem(produto.getImagem());
+			pn.ResultadoProduto(produto);
 		} catch (Exception x) {
 
 		}
-	}
+	}*/
 
 
 

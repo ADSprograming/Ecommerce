@@ -7,13 +7,21 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.classeBasica.web.Carrinho;
 import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Produto;
 import com.classeBasica.web.Proprietario;
+
+/*
+entityManager.createNativeQuery("INSERT INTO Produto (idProduto, descricao, marca, nome, preco, imagem) VALUES "
++ "(NULL,'"+p.getDescricao()+"', '"+p.getMarca()+"', '"+p.getNome()+"', "+p.getPreco()+", NULL); "
++ "SET @idProduto = LAST_INSERT_ID(); "
++ "UPDATE Produto SET imagem = @idProduto WHERE  idProduto = @idProduto;").executeUpdate();*/
 
 
 public class GenericoDAO <Entidade>{
@@ -145,11 +153,12 @@ public class GenericoDAO <Entidade>{
 		}
 		return proprietario;
 	}
-
+	
+	
 	public Produto consultarProduto(int idProduto) {
 		Produto produto = null;
 		try{
-			produto = (Produto) entityManager.createQuery("FROM Cliente WHERE idProduto ='"+idProduto+"'").getSingleResult();
+			produto = (Produto) entityManager.createQuery("FROM Produto WHERE idProduto ='"+idProduto+"'").getSingleResult();
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -44,7 +44,7 @@ public class ProdutoNegocio implements INegocioProduto{
 		if (p.getPreco() <= 0) {
 			throw new Exception("Informe preço acima de zero");
 		}
-
+		
 		pd.inserir(p);			
 	}
 
@@ -103,8 +103,8 @@ public class ProdutoNegocio implements INegocioProduto{
 		}
 	}
 
-	public void ResultadoProduto(int idProduto){
-		pd.consultarProduto(idProduto);
-	}	
+	/*public void ResultadoProduto(){
+		pd.consultarProduto(Produto.getIdProduto());
+	}	*/
 
 }

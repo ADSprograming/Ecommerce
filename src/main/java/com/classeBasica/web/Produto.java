@@ -20,15 +20,6 @@ public class Produto {
 	@ManyToMany(mappedBy="produtos")
 	private Set<Compra> compras;
 
-	public Produto(int idProduto, String nome, String marca, String imagem){
-		this.idProduto = idProduto;
-		this.nome = nome;
-		this.marca = marca;
-		this.imagem = imagem;
-	}
-
-	public Produto() {}
-
 	public String toString() {
 		return nome;
 	}

@@ -60,6 +60,7 @@ public class FileUploadController {
 			out.flush();
 			out.close();
 
+			
 			System.out.println("Novo arquivo criado!");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());

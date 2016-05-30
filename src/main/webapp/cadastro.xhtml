@@ -22,20 +22,20 @@
 	<div class="cadastrobox">
 		<h:form action="" class="cadastro">
 			<label for="">Nome:</label>
-			<p:inputText type="text" value="#{clienteBean.nome}"
+			<p:inputText type="text" value="#{clienteBean.cliente.nome}"
 				placeholder="Informe seu Nome"></p:inputText>
 
 			<label for="">Email:</label>
-			<p:inputText type="text" value="#{clienteBean.email}"
+			<p:inputText type="text" value="#{clienteBean.cliente.email}"
 				placeholder="Informe seu E-mail">
 			</p:inputText>
 
 			<label for="">Cpf:</label>
-			<p:inputMask id="cpf" type="text" value="#{clienteBean.cpf}"
+			<p:inputMask id="cpf" type="text" value="#{clienteBean.cliente.cpf}"
 				mask="999.999.999.99" placeholder="Informe seu CPF"></p:inputMask>
 
 			<label for="">Login:</label>
-			<p:inputText type="text" value="#{clienteBean.login}"></p:inputText>
+			<p:inputText type="text" value="#{clienteBean.cliente.login}"></p:inputText>
 
 			<label for="">Senha:</label>
 			<p:inputText type="password" id="senha" value="#{clienteBean.senha}"></p:inputText>

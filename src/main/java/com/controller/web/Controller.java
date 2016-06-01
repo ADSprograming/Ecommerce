@@ -56,7 +56,7 @@ public class Controller {
 	//METODOS
 	public String efetuarLogin(){
 		FachadaLogin fl = new FachadaLogin();
-		fl.FachadaCliente();
+		fl.FachadaProprietario();
 		boolean valida = fl.validar(cliente.getLogin(),cliente.getSenha());
 		usuarioLogado = fl.consultarNome(cliente.getLogin());
 		

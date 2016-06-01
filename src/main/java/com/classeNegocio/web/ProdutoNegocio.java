@@ -103,8 +103,4 @@ public class ProdutoNegocio implements INegocioProduto{
 		}
 	}
 
-	/*public void ResultadoProduto(){
-		pd.consultarProduto(Produto.getIdProduto());
-	}	*/
-
 }

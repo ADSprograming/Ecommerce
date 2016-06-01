@@ -3,29 +3,18 @@ package com.controller.web;
 
 
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
+
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
 
 import com.classeBasica.web.Produto;
-import com.classeNegocio.web.ProdutoNegocio;
 import com.fachada.web.FachadaProduto;
-
+import com.classeNegocio.web.ProdutoNegocio;
 
 
 @ManagedBean(name="produtoBean", eager = true)
@@ -73,7 +62,6 @@ public class ProdutoBean   {
 
 	public String setProdutoCadastar(){
 
-		
 		try {
 			pn.cadastrar(produto);
 		}catch(Exception x){
@@ -84,7 +72,6 @@ public class ProdutoBean   {
 
 	public String setProdutoAlterar(){
 
-		ProdutoNegocio pn = new ProdutoNegocio();
 		try {
 			pn.alterar(produto);
 
@@ -96,7 +83,6 @@ public class ProdutoBean   {
 
 	public String setProdutoRemover(){
 
-		ProdutoNegocio pn = new ProdutoNegocio();
 		try {	
 			pn.remover(produto);
 		} catch (Exception x) {
@@ -105,18 +91,16 @@ public class ProdutoBean   {
 		return "painel.xhtml?faces-redirect=true";
 	}
 
-
 	public Produto buscarProduto(int id) {
+
 		try {
 			fp.iniciarFachada();
-		    produto = fp.buscarPorChave(id);
+			 produto = fp.buscarPorChave(id);
 		} catch (Exception x) {
 
 		}
-		
 		return produto;
+
 	}
-
-
 
 }

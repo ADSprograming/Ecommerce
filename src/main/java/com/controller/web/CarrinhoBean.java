@@ -19,7 +19,7 @@ import com.fachada.web.FachadaCarrinho;
 public class CarrinhoBean {
 	  FachadaCarrinho fc = new FachadaCarrinho(); 
 	    private List<Carrinho> carrinhos;
-	    private double total,frete,subTotal;
+	    private double total;
 	    
 	    @SuppressWarnings("restriction")
 		@PostConstruct
@@ -28,8 +28,6 @@ public class CarrinhoBean {
 	        carrinhos = fc.buscarTodos();
 	        for (Carrinho car: carrinhos){
 				total += (car.getPreco() * car.getQtd());
-				frete += 8;
-				subTotal = total + frete;
 			}
 	    }
 		
@@ -51,14 +49,6 @@ public class CarrinhoBean {
 			return total;
 		}
 		
-		public double getSubTotal() {
-			return subTotal;
-		}
-
-		public double getFrete(){
-			return frete;
-		}
-
 		public String removerTudo(){
 			fc.removerTudo();
 			return "carrinho.xhtml?faces-redirect=true";

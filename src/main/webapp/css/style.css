@@ -16,6 +16,7 @@ img {max-width: 100%;}
 .containercarrinho {width: 100%;float: left;padding: 3% 11% 3%;text-align: center;}
 .cabecalho  {border-bottom: 1px solid #dedede;box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);padding: 20px 0;}
 .btn-produto {float: right;background-color: #4CAF50;border-radius: 5px 5px 5px 5px;;border: 0.5px solid #4CAF50;color: #fff;text-align: center;cursor: pointer;    padding: 0% 25% 0% 29%;width: 106%;margin-top: -10%;margin-right: -10%;}
+.containerFinalizar {width: 60%;float: left;padding: 3% 0 26%;text-align: center;margin-left: 20%;}
 
 /*===================HEADER===========================*/
 

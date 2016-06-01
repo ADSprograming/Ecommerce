@@ -28,4 +28,8 @@ public class FachadaProduto {
 	public void remover(int id){
 		pd.remover(pd.buscarPorChave(id));
 	}
+	
+	public Produto buscarPorChave(int id){
+		return pd.buscarPorChave(id);
+	}
 }

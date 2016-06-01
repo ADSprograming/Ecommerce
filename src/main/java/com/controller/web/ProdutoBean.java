@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -25,6 +24,7 @@ import org.primefaces.model.UploadedFile;
 
 import com.classeBasica.web.Produto;
 import com.classeNegocio.web.ProdutoNegocio;
+import com.fachada.web.FachadaProduto;
 
 
 
@@ -35,6 +35,9 @@ public class ProdutoBean   {
 	private String nome,descricao,marca,imagem;
 	private double preco;
 	Produto produto = new Produto();
+	ProdutoNegocio pn = new ProdutoNegocio();
+	FachadaProduto fp = new FachadaProduto();
+	
 	public Produto getProduto() {
 		return produto;
 	}
@@ -70,7 +73,7 @@ public class ProdutoBean   {
 
 	public String setProdutoCadastar(){
 
-		ProdutoNegocio pn = new ProdutoNegocio();
+		
 		try {
 			pn.cadastrar(produto);
 		}catch(Exception x){
@@ -102,15 +105,17 @@ public class ProdutoBean   {
 		return "painel.xhtml?faces-redirect=true";
 	}
 
-/*
-	public void buscarproduto() {
+
+	public Produto buscarProduto(int id) {
 		try {
-			ProdutoNegocio pn = new ProdutoNegocio();
-			pn.ResultadoProduto(produto);
+			fp.iniciarFachada();
+		    produto = fp.buscarPorChave(id);
 		} catch (Exception x) {
 
 		}
-	}*/
+		
+		return produto;
+	}
 
 
 

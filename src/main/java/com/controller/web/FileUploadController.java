@@ -17,7 +17,7 @@ import com.classeBasica.web.Produto;
 
 @ManagedBean(name="fileUploadController")
 public class FileUploadController {
-	private String destination="C:/";
+	private String destination="/home/miojo/Documents/Projetos/Java/Ecommerce/src/main/webapp/img/";
 
 	public void handleFileUploadAdicionar(FileUploadEvent event) {  
 		FacesMessage message = new FacesMessage("Sucesso", event.getFile().getFileName() + " O arquivo foi carrgado com sucesso!");  

@@ -4,12 +4,15 @@ package com.fachada.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.caelum.stella.boleto.transformer.GeradorDeBoletoHTML;
+
 import com.classeBasica.web.Carrinho;
 import com.classeBasica.web.Produto;
 import com.classeDado.web.CarrinhoDAO;
 import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProdutoDAO;
 import com.classeNegocio.web.CarrinhoNegocio;
+import com.controller.web.BoletoTest;
 
 public class FachadaCarrinho {
 	Carrinho carrinho;
@@ -24,6 +27,7 @@ public class FachadaCarrinho {
     	cd = FactoryDAO.getCarrinhoDAO();
     	cn = new CarrinhoNegocio();
     	produto = new Produto();
+    	
     }
     
     public void setCarrinho(int id){
@@ -51,8 +55,13 @@ public class FachadaCarrinho {
     	 for(Carrinho car : listaProduto){
     		 cd.remover(car);
     	 }
-    	
+    } 
+    public void gerarBoleto(){
+    	BoletoTest bt = new BoletoTest();
+    	bt.main();
     }
+    	
+    
     
     
 }

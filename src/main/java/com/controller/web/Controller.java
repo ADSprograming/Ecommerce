@@ -6,6 +6,10 @@ import javax.faces.bean.ManagedBean;
 
 
 
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Proprietario;
@@ -17,14 +21,17 @@ import com.classeNegocio.web.ProprietarioNegocio;
 import com.fachada.web.FachadaLogin;
 
 @ManagedBean
+@SessionScoped
+@ViewScoped
 public class Controller {
 
-	private boolean session;
+	private boolean session,valida;
     private Cliente usuarioLogado;
     private Cliente cliente = new Cliente();
     private Proprietario usuarioAdminLogado;
     private Proprietario proprietario = new Proprietario();
-	
+    FachadaLogin fl = new FachadaLogin();
+    LoginSingleton l = LoginSingleton.getInstance();
     public Proprietario getUsuarioAdminLogado() {
 		return usuarioAdminLogado;
 	}
@@ -33,6 +40,9 @@ public class Controller {
 	}
 	public boolean isSession() {
 		return session;
+	}
+	public boolean isValida(){
+		return valida;
 	}
 	public void setSession(boolean session) {
 		this.session = session;
@@ -55,13 +65,14 @@ public class Controller {
 	}
 	//METODOS
 	public String efetuarLogin(){
-		FachadaLogin fl = new FachadaLogin();
-		fl.FachadaProprietario();
-		boolean valida = fl.validar(cliente.getLogin(),cliente.getSenha());
-		usuarioLogado = fl.consultarNome(cliente.getLogin());
 		
+		fl.FachadaCliente();
+		valida = fl.validar(cliente.getLogin(),cliente.getSenha());
+		usuarioLogado = fl.consultarNome(cliente.getLogin());
 		if(valida == true){
 			session = true;
+			l.setLog(true);
+			l.setCliente(usuarioLogado);
 			return "index.xhtml?faces-redirect=true";
 		}
 		else{
@@ -71,6 +82,8 @@ public class Controller {
 	public String cancelar(){
 		 return "index.xhtml?faces-redirect=true";
 	}
+	
+	
 	
 	public String efetuarLoginAdmin(){
 		FachadaLogin fl = new FachadaLogin();

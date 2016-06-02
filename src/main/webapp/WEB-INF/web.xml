@@ -22,6 +22,14 @@
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet>
+    <servlet-name>JasperReportsImageServlet</servlet-name>
+    <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>JasperReportsImageServlet</servlet-name>
+    <url-pattern>/stella-boleto</url-pattern>
+</servlet-mapping>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.xhtml</url-pattern>

@@ -17,17 +17,21 @@ import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProdutoDAO;
 import com.classeNegocio.web.CarrinhoNegocio;
 import com.fachada.web.FachadaCarrinho;
+import com.fachada.web.FachadaProduto;
 
 @ManagedBean
 @SessionScoped
 @ViewScoped
 public class CarrinhoBean {
 	  FachadaCarrinho fc = new FachadaCarrinho(); 
+	  FachadaProduto fp = new FachadaProduto();
 	 
-	    HttpServletRequest request;
+	   
+
+		HttpServletRequest request;
 	    private List<Carrinho> carrinhos;
 	    private double total,frete,subTotal;
-	
+	   
 	    LoginSingleton l = LoginSingleton.getInstance();
 
 		@SuppressWarnings("restriction")

@@ -20,8 +20,10 @@ public class FachadaCarrinho {
     CarrinhoDAO cd;
     CarrinhoNegocio cn;
     Produto produto;
+   
     
-    public void iniciarFachada(){
+
+	public void iniciarFachada(){
     	carrinho = new Carrinho();
     	pd = FactoryDAO.getProdutoDAO();
     	cd = FactoryDAO.getCarrinhoDAO();
@@ -61,7 +63,7 @@ public class FachadaCarrinho {
     	bt.main();
     }
     	
-    
+   
     
     
 }

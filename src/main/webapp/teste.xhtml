@@ -1,21 +1,75 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-
-<h:head></h:head>
-
+<h:head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+	<meta name="description" content="Site de ecommerce responsivo" />
+	<meta name="keywords" content="Ecommerce,responsivo" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="sÃ³stenes freitas" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans'
+		rel='stylesheet' type='text/css' />
+	<link rel="icon" href="img/Logo.png" />
+	<title>Ecommerce</title>
+	<style>
+.ui-datascroller .ui-datascroller-loader {padding: 0;}
+.ui-datascroller .ui-datascroller-list {padding: 3%}
+.ui-widget-content {border: 0px solid #a8a8a8;background: rgba(255, 255, 255, 0);color: rgba(255, 255, 255, 0);}
+</style>
+</h:head>
 <h:body>
-	<h:form id="form">
-		<p:growl id="messages" showDetail="true" />
-		<p:fileUpload
-			fileUploadListener="#{fileUploadController.handleFileUpload}"
-			mode="advanced" dragDropSupport="false" update="messages"
-			sizeLimit="100000" fileLimit="1" allowTypes="/(\.|\/)(jpe?g|png)$/" />
+	<p:dataScroller value="#{produtoBean.produtos}" var="produto"
+		chunkSize="10" id="sai">
 
+		<div class="servico">
+			<h:form>
+				<p:graphicImage library="images" name="#{produto.imagem}.jpg" />
+				<div class="inner">
 
+					<a><h:outputText value="#{produto.marca}" />
+						<p:spacer width="20" height="20" /> <h:outputText
+							value="#{produto.nome}" /></a>
+					<h4>
+						<h:outputText value="#{produto.preco}">
+							<f:convertNumber currencySymbol="R$" type="currency" />
+						</h:outputText>
+					</h4>
 
+					<h:commandLink
+						action="#{produtoBean.buscarProduto(produto.idProduto)}">
+						<button class="btn-confirma"
+							style="vertical-align: middle; width: 100%; border-radius: 5px; margin-bottom: 2%;">
+							<span>Alterar</span>
+						</button>
+					</h:commandLink>
+					<h7>Copyright @ Miojo 2016.</h7>
+				</div>
+			</h:form>
+		</div>
+
+	</p:dataScroller>
+	<h:form>
+	<section class="newsletter container"
+		style="background-color: #130400;">
+		<h:inputText value="#{produtoBean.produto.marca}" />
+		<h:inputText value="#{produtoBean.produto.nome}" />
+		<h:inputText value="#{produtoBean.produto.descricao}" />
+		<h:inputText value="#{produtoBean.produto.preco}" />
+		<h:commandLink action="#{produtoBean.alterar}">
+						<button class="btn-confirma"
+							style="vertical-align: middle; width: 100%; border-radius: 5px; margin-bottom: 2%;">
+							<span>Alterar</span>
+						</button>
+	   </h:commandLink>
+	</section>
 	</h:form>
 </h:body>
 </html>

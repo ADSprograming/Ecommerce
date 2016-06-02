@@ -60,37 +60,7 @@ public class ProdutoBean   {
 		this.service = service;
 	}
 
-	public String setProdutoCadastar(){
-
-		try {
-			pn.cadastrar(produto);
-		}catch(Exception x){
-
-		}
-		return "painel.xhtml?redirect=true";
-	}	
-
-	public String setProdutoAlterar(){
-
-		try {
-			pn.alterar(produto);
-
-		}catch(Exception x){
-
-		}
-		return "painel.xhtml?redirect=true";
-	}
-
-	public String setProdutoRemover(){
-
-		try {	
-			pn.remover(produto);
-		} catch (Exception x) {
-
-		}		
-		return "painel.xhtml?faces-redirect=true";
-	}
-
+	
 	public Produto buscarProduto(int id) {
 
 		try {
@@ -101,6 +71,10 @@ public class ProdutoBean   {
 		}
 		return produto;
 
+	}
+	
+	public void alterar(){
+		fp.alterar(produto);
 	}
 
 }

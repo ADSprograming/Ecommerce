@@ -32,4 +32,8 @@ public class FachadaProduto {
 	public Produto buscarPorChave(int id){
 		return pd.buscarPorChave(id);
 	}
+	
+	public void alterar(Produto produto){
+		pd.alterar(produto);
+	}
 }

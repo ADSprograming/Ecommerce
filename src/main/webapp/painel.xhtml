@@ -204,21 +204,40 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-2">
-									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
-										update="display" panelStyle="width:190px"
-										style="width:106%;margin-left: 4%;" effect="fold"
-										filter="true" filterMatchMode="startsWith">
-										<f:selectItem itemLabel="Selecione o produto"
-											itemValue="#{null}" />
-										<f:selectItems value="#{produtoBean.produtos}" var="p"
-											itemLabel="#{p.marca} - #{p.nome}" itemValue="#{p.idProduto}" />
-									</p:selectOneMenu>
+									
+									<p:dataScroller value="#{produtoBean.produtos}" var="produto"
+		chunkSize="10" id="sai">
+
+		<div class="servico" style="width:50%;">
+			<h:form>
+				<p:graphicImage library="images" name="#{produto.imagem}.jpg" />
+				<div class="inner">
+
+					<a><h:outputText value="#{produto.marca}" />
+						<p:spacer width="20" height="20" /> <h:outputText
+							value="#{produto.nome}" /></a>
+					<h4>
+						<h:outputText value="#{produto.preco}">
+							<f:convertNumber currencySymbol="R$" type="currency" />
+						</h:outputText>
+					</h4>
+
+					<h:commandLink
+						action="#{produtoBean.buscarProduto(produto.idProduto)}">
+						<button class="btn-confirma"
+							style="vertical-align: middle; width: 100%; border-radius: 5px; margin-bottom: 2%;">
+							<span>Alterar</span>
+						</button>
+					</h:commandLink>
+					<h7>Copyright @ Miojo 2016.</h7>
+				</div>
+			</h:form>
+		</div>
+
+	</p:dataScroller>
+								
 								</div>
-								<div class="ui-grid-col-3">
-									<h:commandLink action="#{produtoBean.buscarproduto}">
-										<buttom class="btn-produto" type="submit">Buscar</buttom>
-									</h:commandLink>
-								</div>
+								
 							</div>
 						</div>
 					</h:panelGrid>

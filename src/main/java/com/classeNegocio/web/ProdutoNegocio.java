@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Produto;
 import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProdutoDAO;
@@ -45,6 +44,13 @@ public class ProdutoNegocio implements INegocioProduto{
 			throw new Exception("Informe preço acima de zero");
 		}
 		
+		/*if (p.getImagem() == null) {
+		throw new Exception("Envie a imagem");
+		}
+		if (p.getImagem().trim().equals("") == true) {
+		throw new Exception("Envie a imagem");
+		}*/
+		
 		pd.inserir(p);			
 	}
 
@@ -73,6 +79,13 @@ public class ProdutoNegocio implements INegocioProduto{
 		if (p.getPreco() <= 0) {
 			throw new Exception("Informe preço acima de zero");
 		}
+		
+		/*if (p.getImagem() == null) {
+		throw new Exception("Envie a imagem");
+		}
+		if (p.getImagem().trim().equals("") == true) {
+		throw new Exception("Envie a imagem");
+		}*/
 
 		pd.alterar(p);			
 	}

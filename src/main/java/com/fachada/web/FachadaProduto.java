@@ -7,7 +7,7 @@ import com.classeNegocio.web.ProdutoNegocio;
 
 public class FachadaProduto {
 	
-	protected Produto produto;
+	protected Produto produto = new Produto();
 	protected ProdutoNegocio pn;
 	protected ProdutoDAO pd;
 	public void iniciarFachada(){
@@ -25,15 +25,15 @@ public class FachadaProduto {
 		}
 	}
 	
-	public void remover(int id){
-		pd.remover(pd.buscarPorChave(id));
-	}
-	
 	public Produto buscarPorChave(int id){
 		return pd.buscarPorChave(id);
 	}
 	
 	public void alterar(Produto produto){
 		pd.alterar(produto);
+	}
+	
+	public void remover(int id){
+		pd.remover(pd.buscarPorChave(id));
 	}
 }

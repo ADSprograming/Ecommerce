@@ -11,14 +11,14 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
 
 import com.classeBasica.web.Produto;
 
 @ManagedBean(name="fileUploadController")
 public class FileUploadController {
-	private String destination="C:/";
-
+	private String destination="C:/Users/MegaKingBR/workspace/Ecommerce/src/main/webapp/img/";
+	Produto p = new Produto();
+	
 	public void handleFileUploadAdicionar(FileUploadEvent event) {  
 		FacesMessage message = new FacesMessage("Sucesso", event.getFile().getFileName() + " O arquivo foi carrgado com sucesso!");  
 		FacesContext.getCurrentInstance().addMessage(null, message);
@@ -55,7 +55,10 @@ public class FileUploadController {
 			while ((read = in.read(bytes)) != -1) {
 				out.write(bytes, 0, read);
 			}
+			
+			p.setImagem(fileName);
 
+			
 			in.close();
 			out.flush();
 			out.close();

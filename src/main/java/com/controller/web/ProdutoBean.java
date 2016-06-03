@@ -20,9 +20,7 @@ import com.classeNegocio.web.ProdutoNegocio;
 @ManagedBean(name="produtoBean", eager = true)
 @ViewScoped
 public class ProdutoBean   {
-	private int idProduto;
-	private String nome,descricao,marca,imagem;
-	private double preco;
+
 	Produto produto = new Produto();
 	ProdutoNegocio pn = new ProdutoNegocio();
 	FachadaProduto fp = new FachadaProduto();
@@ -61,11 +59,11 @@ public class ProdutoBean   {
 	}
 
 	
-	public Produto buscarProduto(int id) {
+	public Produto buscarProduto() {
 
 		try {
 			fp.iniciarFachada();
-			 produto = fp.buscarPorChave(id);
+			 produto = fp.buscarPorChave(produto.getIdProduto());
 		} catch (Exception x) {
 
 		}
@@ -76,5 +74,7 @@ public class ProdutoBean   {
 	public void alterar(){
 		fp.alterar(produto);
 	}
+	
+
 
 }

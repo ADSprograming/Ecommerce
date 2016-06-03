@@ -14,7 +14,7 @@
     </init-param>
     <init-param>
       <param-name>uploadDirectory</param-name>
-      <param-value>C:/</param-value>
+      <param-value>C:/Users/MegaKingBR/Desktop/Ecommerce/src/main/webapp/img/</param-value>
     </init-param>
   </filter>
   <servlet>

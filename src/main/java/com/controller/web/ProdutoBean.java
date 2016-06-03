@@ -24,7 +24,7 @@ public class ProdutoBean   {
 	Produto produto = new Produto();
 	ProdutoNegocio pn = new ProdutoNegocio();
 	FachadaProduto fp = new FachadaProduto();
-	
+
 	public Produto getProduto() {
 		return produto;
 	}
@@ -58,23 +58,39 @@ public class ProdutoBean   {
 		this.service = service;
 	}
 
-	
+
 	public Produto buscarProduto() {
 
 		try {
 			fp.iniciarFachada();
-			 produto = fp.buscarPorChave(produto.getIdProduto());
+			produto = fp.buscarPorChave(produto.getIdProduto());
 		} catch (Exception x) {
 
 		}
 		return produto;
 
 	}
-	
+
 	public void alterar(){
-		fp.alterar(produto);
+		try {
+			fp.alterar(produto);
+		} catch (Exception x) {
+
+		}
 	}
-	
+
+
+	public void remover() {
+
+		try {
+			fp.iniciarFachada();
+			fp.remover(produto.getIdProduto());
+		} catch (Exception x) {
+
+		}
+
+	}
+
 
 
 }

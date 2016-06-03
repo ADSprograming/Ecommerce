@@ -16,7 +16,7 @@ import com.classeBasica.web.Produto;
 
 @ManagedBean(name="fileUploadController")
 public class FileUploadController {
-	private String destination="C:/Users/miojo/workspace/Ecommerce/src/main/webapp/img/";
+	private String destination="C:/Users/MegaKingBR/Desktop/Ecommerce/src/main/webapp/img/";
 	ProdutoBean pb = new ProdutoBean();
 	LoginSingleton l = LoginSingleton.getInstance();
 	public void handleFileUploadAdicionar(FileUploadEvent event) {  

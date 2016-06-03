@@ -5,8 +5,6 @@ import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProprietarioDAO;
 import com.interfaceNegocio.web.INegocioProprietario;
 
-
-
 public class ProprietarioNegocio implements INegocioProprietario{
 	ProprietarioDAO dp = FactoryDAO.getProprietarioDAO();
 	public void cadastrar(Proprietario pr) throws Exception {

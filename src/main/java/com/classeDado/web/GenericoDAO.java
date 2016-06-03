@@ -17,13 +17,6 @@ import com.classeBasica.web.Cliente;
 import com.classeBasica.web.Produto;
 import com.classeBasica.web.Proprietario;
 
-/*
-entityManager.createNativeQuery("INSERT INTO Produto (idProduto, descricao, marca, nome, preco, imagem) VALUES "
-+ "(NULL,'"+p.getDescricao()+"', '"+p.getMarca()+"', '"+p.getNome()+"', "+p.getPreco()+", NULL); "
-+ "SET @idProduto = LAST_INSERT_ID(); "
-+ "UPDATE Produto SET imagem = @idProduto WHERE  idProduto = @idProduto;").executeUpdate();*/
-
-
 public class GenericoDAO <Entidade>{
 
 	private EntityManager entityManager;
@@ -153,21 +146,8 @@ public class GenericoDAO <Entidade>{
 		}
 		return proprietario;
 	}
-	
-	
-	public Produto inserirProduto(Produto p) {
-		Produto produto = null;
-		try{
-			entityManager.createQuery("INSERT INTO Produto (idProduto, descricao, marca, nome, preco, imagem) VALUES "
-					+ "(NULL,'"+p.getDescricao()+"', '"+p.getMarca()+"', '"+p.getNome()+"', "+p.getPreco()+", NULL); "
-					+ "SET @idProduto = LAST_INSERT_ID(); "
-					+ "UPDATE Produto SET imagem = @idProduto WHERE  idProduto = @idProduto;");
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		return produto;
-	}
-	
+
+
 	public Produto consultarProduto(int idProduto) {
 		Produto produto = null;
 		try{

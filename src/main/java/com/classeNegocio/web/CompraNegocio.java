@@ -5,8 +5,6 @@ import com.classeDado.web.CompraDAO;
 import com.classeDado.web.FactoryDAO;
 import com.interfaceNegocio.web.INegocioCompra;
 
-
-
 public class CompraNegocio implements INegocioCompra{
 
 	public void cadastrar(Compra co) throws Exception {

@@ -111,7 +111,7 @@
 										<f:convertNumber currencySymbol="R$" type="currency" />
 									</h:outputText>
 								</h4>
-								
+
 								<h:commandLink
 									action="#{carrinhoBean.removerProduto(carrinho.idCarrinho)}"
 									style="float:none;">
@@ -138,11 +138,12 @@
 							<h:outputText value="#{carrinhoBean.frete}">
 								<f:convertNumber currencySymbol="R$" type="currency" />
 							</h:outputText>
-								</label> <label for="Totaol"
+						</label> <label for="Totaol"
 							style="width: 100%; margin-right: 10%; margin-bottom: 1%; margin-top: 1%;">Total:
 							<h:outputText value="#{carrinhoBean.subTotal}">
 								<f:convertNumber currencySymbol="R$" type="currency" />
-							</h:outputText></label>
+							</h:outputText>
+						</label>
 						<h:commandLink action="#{carrinhoBean.removerTudo}">
 							<button class="btn-confirma"
 								style="vertical-align: middle; width: 100%; border-radius: 0;">

@@ -6,7 +6,7 @@ import com.classeDado.web.ProdutoDAO;
 import com.classeNegocio.web.ProdutoNegocio;
 
 public class FachadaProduto {
-	
+
 	protected Produto produto = new Produto();
 	protected ProdutoNegocio pn;
 	protected ProdutoDAO pd;
@@ -15,7 +15,7 @@ public class FachadaProduto {
 		pn = new ProdutoNegocio();
 		pd = FactoryDAO.getProdutoDAO();
 	}
-	
+
 	public void setProduto(Produto produto){
 		try {
 			pn.cadastrar(produto);
@@ -24,19 +24,19 @@ public class FachadaProduto {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Produto buscarPorChave(int id){
 		return pd.buscarPorChave(id);
 	}
-	
+
 	public void cadastrar(Produto produto){
 		pd.inserir(produto);
 	}
-	
+
 	public void alterar(Produto produto){
 		pd.alterar(produto);
 	}
-	
+
 	public void remover(int id){
 		pd.remover(pd.buscarPorChave(id));
 	}

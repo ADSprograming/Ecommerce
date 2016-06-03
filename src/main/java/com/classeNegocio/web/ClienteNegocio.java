@@ -6,12 +6,8 @@ import com.classeDado.web.FactoryDAO;
 
 import com.interfaceNegocio.web.INegocioCliente;
 
-
-
-
 public class ClienteNegocio implements INegocioCliente{
 	ClienteDAO df = FactoryDAO.getClienteDAO();
-
 
 	public void cadastrar(Cliente cl) throws Exception {
 		if (cl == null) {

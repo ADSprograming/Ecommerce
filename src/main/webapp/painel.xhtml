@@ -144,13 +144,13 @@
 									<label for="">Nome:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.nome}"
+									<p:inputText type="text" value="#{produtoBean.adicionarNome}"
 										label="Nome" required="true"></p:inputText>
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -159,7 +159,7 @@
 									<label for="">Marca:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.marca}"
+									<p:inputText type="text" value="#{produtoBean.adicionarMarca}"
 										label="Marca"></p:inputText>
 
 								</div>
@@ -167,15 +167,14 @@
 						</div>
 					</h:panelGrid>
 
-					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 29%;">
+					<h:panelGrid columns="2" cellpadding="5" style="width: 29%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-2">
 									<label for="">Preço:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.preco}"
+									<p:inputText type="text" value="#{produtoBean.adicionarPreco}"
 										label="Preço"></p:inputText>
 								</div>
 							</div>
@@ -192,19 +191,19 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-3">
-									<p:inputTextarea value="#{produtoBean.produto.descricao}"
+									<p:inputTextarea value="#{produtoBean.adicionarDescricao}"
 										style="width: 97.9%;height: 200%;margin-left: 2%;"
 										label="Descrição"></p:inputTextarea>
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -214,7 +213,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 100%;margin-top: -2.5%">
 						<div class="ui-grid ui-grid-responsive">
@@ -226,12 +225,12 @@
 										fileUploadListener="#{fileUploadController.handleFileUploadAlterar}"
 										mode="advanced" dragDropSupport="false" update="msg"
 										sizeLimit="100000" fileLimit="1"
-										allowTypes="/(\.|\/)(jpe?g|png)$/" />
+										allowTypes="/(\.|\/)(jpe?g)$/" />
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -248,7 +247,7 @@
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.produto.idProduto}.jpg" width="500"
+							name="#{produtoBean.adicionarImagem}.jpg" width="500"
 							height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
@@ -266,7 +265,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
-					
+
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -283,7 +282,7 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-2">
-									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
+									<p:selectOneMenu value="#{produtoBean.alterarIdProduto}"
 										update="display" panelStyle="width:190px" style="width:100%;"
 										effect="fold" filter="true" filterMatchMode="startsWith">
 										<f:selectItem itemLabel="Selecione o produto"
@@ -300,7 +299,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -309,14 +308,14 @@
 									<label for="">Marca:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.marca}"
+									<p:inputText type="text" value="#{produtoBean.alterarMarca}"
 										label="Marca"></p:inputText>
 
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;margin-bottom: 1%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -325,7 +324,7 @@
 									<label for="">Preço:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.preco}"
+									<p:inputText type="text" value="#{produtoBean.alterarPreco}"
 										label="Preço"></p:inputText>
 								</div>
 							</div>
@@ -342,19 +341,19 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-3">
-									<p:inputTextarea value="#{produtoBean.produto.descricao}"
+									<p:inputTextarea value="#{produtoBean.alterarDescricao}"
 										style="width: 97.9%;height: 200%;margin-left: 2%;"
 										label="Descrição"></p:inputTextarea>
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -364,7 +363,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 100%;margin-top: -2.5%">
 						<div class="ui-grid ui-grid-responsive">
@@ -376,12 +375,12 @@
 										fileUploadListener="#{fileUploadController.handleFileUploadAlterar}"
 										mode="advanced" dragDropSupport="false" update="msg"
 										sizeLimit="100000" fileLimit="1"
-										allowTypes="/(\.|\/)(jpe?g|png)$/" />
+										allowTypes="/(\.|\/)(jpe?g)$/" />
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -393,12 +392,12 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<p:dialog id="displayAlterar" header="Confirmação" modal="true"
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.produto.idProduto}.jpg" width="500"
+							name="#{produtoBean.alterarIdProduto}.jpg" width="500"
 							height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
@@ -416,7 +415,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
-					
+
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -434,9 +433,10 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
-										update="display" panelStyle="width:190px" style="width:250px"
-										effect="fold" filter="true" filterMatchMode="startsWith">
+									<p:selectOneMenu id="remover"
+										value="#{produtoBean.removerIdProduto}"
+										panelStyle="width:190px" style="width:250px" effect="fold"
+										filter="true" filterMatchMode="startsWith">
 										<f:selectItem itemLabel="Selecione o produto"
 											itemValue="#{null}" />
 										<f:selectItems value="#{produtoBean.produtos}" var="produto"
@@ -463,7 +463,7 @@
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
 						<p:graphicImage library="images"
-							name="#{produtoBean.produto.idProduto}.jpg" width="500"
+							name="#{produtoBean.removerImagem}.jpg" width="500"
 							height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
@@ -515,6 +515,6 @@
 			$(".menu").hide();
 		});
 	</script>
-	
+
 </h:body>
 </html>

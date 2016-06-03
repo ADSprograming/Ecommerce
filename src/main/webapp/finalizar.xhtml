@@ -109,7 +109,8 @@
 			<p:growl id="msgs" showDetail="true" />
 			<p:fieldset style="margin-bottom:20px;">
 
-				<h:panelGrid columns="2" cellpadding="5" style="width: 100%;float: left;">
+				<h:panelGrid columns="2" cellpadding="5"
+					style="width: 100%;float: left;">
 					<div class="ui-grid ui-grid-responsive">
 
 						<div class="ui-grid-row">
@@ -122,12 +123,16 @@
 
 
 				</h:panelGrid>
-				<h:panelGrid columns="2" cellpadding="5" style="width: 100%;float: right;">
+				<h:panelGrid columns="2" cellpadding="5"
+					style="width: 100%;float: right;">
 					<div class="ui-grid ui-grid-responsive">
 						<div class="ui-grid-row">
 							<div class="ui-grid-col-3">
-								<h:commandLink action="#{carrinhoBean.gerar}"><button class="btn-confirma"
-										style="width: 100%;border-radius: 5px 5px 5px 5px;">Gerar Boleto</button></h:commandLink>
+								<h:commandLink action="#{carrinhoBean.gerar}">
+									<button class="btn-confirma"
+										style="width: 100%; border-radius: 5px 5px 5px 5px;">Gerar
+										Boleto</button>
+								</h:commandLink>
 							</div>
 						</div>
 					</div>

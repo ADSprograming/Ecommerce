@@ -150,7 +150,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -167,8 +167,7 @@
 						</div>
 					</h:panelGrid>
 
-					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 29%;">
+					<h:panelGrid columns="2" cellpadding="5" style="width: 29%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-2">
@@ -192,7 +191,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -204,7 +203,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -214,7 +213,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 100%;margin-top: -2.5%">
 						<div class="ui-grid ui-grid-responsive">
@@ -231,7 +230,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -266,7 +265,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
-					
+
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -300,7 +299,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -316,7 +315,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 29%;margin-bottom: 1%;">
 						<div class="ui-grid ui-grid-responsive">
@@ -342,7 +341,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -354,7 +353,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -364,7 +363,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5"
 						style="width: 100%;margin-top: -2.5%">
 						<div class="ui-grid ui-grid-responsive">
@@ -381,7 +380,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -393,7 +392,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
-					
+
 					<p:dialog id="displayAlterar" header="Confirmação" modal="true"
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
@@ -416,7 +415,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
-					
+
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -434,9 +433,10 @@
 									<label for="">Produto:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:selectOneMenu id="remover" value="#{produtoBean.removerIdProduto}"
-										panelStyle="width:190px" style="width:250px"
-										effect="fold" filter="true" filterMatchMode="startsWith">
+									<p:selectOneMenu id="remover"
+										value="#{produtoBean.removerIdProduto}"
+										panelStyle="width:190px" style="width:250px" effect="fold"
+										filter="true" filterMatchMode="startsWith">
 										<f:selectItem itemLabel="Selecione o produto"
 											itemValue="#{null}" />
 										<f:selectItems value="#{produtoBean.produtos}" var="produto"

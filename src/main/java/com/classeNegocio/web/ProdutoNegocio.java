@@ -11,8 +11,6 @@ import com.classeDado.web.FactoryDAO;
 import com.classeDado.web.ProdutoDAO;
 import com.interfaceNegocio.web.INegocioProduto;
 
-
-
 @ManagedBean(name = "produtoService")
 @ApplicationScoped
 public class ProdutoNegocio implements INegocioProduto{
@@ -43,14 +41,14 @@ public class ProdutoNegocio implements INegocioProduto{
 		if (p.getPreco() <= 0) {
 			throw new Exception("Informe preço acima de zero");
 		}
-		
+
 		/*if (p.getImagem() == null) {
 		throw new Exception("Envie a imagem");
 		}
 		if (p.getImagem().trim().equals("") == true) {
 		throw new Exception("Envie a imagem");
 		}*/
-		
+
 		pd.inserir(p);			
 	}
 
@@ -79,7 +77,7 @@ public class ProdutoNegocio implements INegocioProduto{
 		if (p.getPreco() <= 0) {
 			throw new Exception("Informe preço acima de zero");
 		}
-		
+
 		/*if (p.getImagem() == null) {
 		throw new Exception("Envie a imagem");
 		}

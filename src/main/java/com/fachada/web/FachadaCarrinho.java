@@ -16,24 +16,24 @@ import com.controller.web.BoletoTest;
 
 public class FachadaCarrinho {
 	Carrinho carrinho;
-    ProdutoDAO pd;
-    CarrinhoDAO cd;
-    CarrinhoNegocio cn;
-    Produto produto;
-   
-    
+	ProdutoDAO pd;
+	CarrinhoDAO cd;
+	CarrinhoNegocio cn;
+	Produto produto;
+
+
 
 	public void iniciarFachada(){
-    	carrinho = new Carrinho();
-    	pd = FactoryDAO.getProdutoDAO();
-    	cd = FactoryDAO.getCarrinhoDAO();
-    	cn = new CarrinhoNegocio();
-    	produto = new Produto();
-    	
-    }
-    
-    public void setCarrinho(int id){
-    	produto = pd.buscarPorChave(id);
+		carrinho = new Carrinho();
+		pd = FactoryDAO.getProdutoDAO();
+		cd = FactoryDAO.getCarrinhoDAO();
+		cn = new CarrinhoNegocio();
+		produto = new Produto();
+
+	}
+
+	public void setCarrinho(int id){
+		produto = pd.buscarPorChave(id);
 		carrinho.setDescricao(produto.getDescricao());
 		carrinho.setMarca(produto.getMarca());
 		carrinho.setNome(produto.getNome());
@@ -41,29 +41,29 @@ public class FachadaCarrinho {
 		carrinho.setQtd(1);
 		carrinho.setIpro(produto.getIdProduto());
 		cd.inserir(carrinho);
-    }
-    
-    public void remover(int id){
-    	cd.remover(cd.buscarPorChave(id));
-    }
-    
-    public List<Carrinho> buscarTodos(){
-    	return cn.todos();
-    	
-    }
-    
-    public void removerTudo(){
-    	List<Carrinho> listaProduto = cn.todos();
-    	 for(Carrinho car : listaProduto){
-    		 cd.remover(car);
-    	 }
-    } 
-    public void gerarBoleto(){
-    	BoletoTest bt = new BoletoTest();
-    	bt.main();
-    }
-    	
-   
-    
-    
+	}
+
+	public void remover(int id){
+		cd.remover(cd.buscarPorChave(id));
+	}
+
+	public List<Carrinho> buscarTodos(){
+		return cn.todos();
+
+	}
+
+	public void removerTudo(){
+		List<Carrinho> listaProduto = cn.todos();
+		for(Carrinho car : listaProduto){
+			cd.remover(car);
+		}
+	} 
+	public void gerarBoleto(){
+		BoletoTest bt = new BoletoTest();
+		bt.main();
+	}
+
+
+
+
 }

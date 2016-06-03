@@ -30,11 +30,11 @@ public class FachadaLogin {
 		pn = new ProprietarioNegocio();
 	}
 
-	
+
 	public boolean validar(String login, String senha){
 		return cn.validarLogin(login,senha);
 	}
-	
+
 	public boolean validarLoginAdmin(String login, String senha){
 		return pn.validarLoginAdmin(login,senha);
 	}	
@@ -42,7 +42,7 @@ public class FachadaLogin {
 	public Cliente consultarNome(String nome){
 		return cd.consultarPorNome(nome);
 	}
-	
+
 	public Proprietario consultarNomeAdmin(String nome){
 		return pd.consultarPorNomeAdmin(nome);
 	}

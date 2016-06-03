@@ -20,9 +20,19 @@
 	<link rel="icon" href="img/Logo.png" />
 	<title>Ecommerce</title>
 	<style>
-.ui-datascroller .ui-datascroller-loader {padding: 0;}
-.ui-datascroller .ui-datascroller-list {padding: 3%}
-.ui-widget-content {border: 0px solid #a8a8a8;background: rgba(255, 255, 255, 0);color: rgba(255, 255, 255, 0);}
+.ui-datascroller .ui-datascroller-loader {
+	padding: 0;
+}
+
+.ui-datascroller .ui-datascroller-list {
+	padding: 3%
+}
+
+.ui-widget-content {
+	border: 0px solid #a8a8a8;
+	background: rgba(255, 255, 255, 0);
+	color: rgba(255, 255, 255, 0);
+}
 </style>
 </h:head>
 <h:body>
@@ -55,11 +65,10 @@
 				<button class="btn btn-cadastrar">
 					Cadastrar <i class="fa fa-arrow-circle-right"></i>
 				</button>
-			</a>
-			<a href="https://www.facebook.com/miojodroid">
-			<button class="btn btn-sobre">
-				Sobre <i class="fa fa-question-circle"></i>
-			</button>
+			</a> <a href="https://www.facebook.com/miojodroid">
+				<button class="btn btn-sobre">
+					Sobre <i class="fa fa-question-circle"></i>
+				</button>
 			</a>
 		</div>
 	</div>
@@ -71,9 +80,8 @@
 				<p:graphicImage library="images" name="#{produto.imagem}.jpg" />
 				<div class="inner">
 
-					<a><h:outputText value="#{produto.marca}" />
-						<p:spacer width="20" height="20" /> <h:outputText
-							value="#{produto.nome}" /></a>
+					<a><h:outputText value="#{produto.marca}" /> <p:spacer
+							width="20" height="20" /> <h:outputText value="#{produto.nome}" /></a>
 					<h4>
 						<h:outputText value="#{produto.preco}">
 							<f:convertNumber currencySymbol="R$" type="currency" />
@@ -113,8 +121,6 @@
 	</div>
 	<p class="copyright">Copyright @ Miojo 2016. Nois que voa.</p>
 	</footer>
-
-
 
 </h:body>
 </html>

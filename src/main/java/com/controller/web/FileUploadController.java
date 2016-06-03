@@ -16,9 +16,9 @@ import com.classeBasica.web.Produto;
 
 @ManagedBean(name="fileUploadController")
 public class FileUploadController {
-	private String destination="C:/Users/MegaKingBR/workspace/Ecommerce/src/main/webapp/img/";
+	private String destination="C:/Users/miojo/workspace/Ecommerce/src/main/webapp/img/";
 	ProdutoBean pb = new ProdutoBean();
-	
+	LoginSingleton l = LoginSingleton.getInstance();
 	public void handleFileUploadAdicionar(FileUploadEvent event) {  
 		FacesMessage message = new FacesMessage("Sucesso", event.getFile().getFileName() + " O arquivo foi carrgado com sucesso!");  
 		FacesContext.getCurrentInstance().addMessage(null, message);
@@ -41,6 +41,7 @@ public class FileUploadController {
 		}
 
 	}
+	
 
 	public void copyFileAdicionar(String fileName, InputStream in) {
 		try {
@@ -56,7 +57,7 @@ public class FileUploadController {
 				out.write(bytes, 0, read);
 			}
 			
-			pb.setAdicionarImagem(fileName);
+			l.setImagem(fileName);
 
 			
 			in.close();
@@ -84,7 +85,7 @@ public class FileUploadController {
 				out.write(bytes, 0, read);
 			}
 			
-			pb.setAlterarImagem(fileName);
+			l.setImagem(fileName);
 
 			
 			in.close();

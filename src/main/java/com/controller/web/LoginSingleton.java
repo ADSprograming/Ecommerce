@@ -17,6 +17,17 @@ public class LoginSingleton {
 	boolean log;
 	Cliente cliente = new Cliente();
 	private double total,frete,subTotal;
+	private String imagem;
+	public String getImagem() {
+		return imagem;
+	}
+
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+
 	public double getTotal() {
 		return total;
 	}

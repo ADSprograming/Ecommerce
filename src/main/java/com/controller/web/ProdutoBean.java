@@ -16,13 +16,13 @@ import com.classeNegocio.web.ProdutoNegocio;
 
 
 @ManagedBean(name="produtoBean", eager = true)
-@ViewScoped
+
 public class ProdutoBean   {
 
 	Produto produto = new Produto();
 	ProdutoNegocio pn = new ProdutoNegocio();
 	FachadaProduto fp = new FachadaProduto();
-
+	LoginSingleton l = LoginSingleton.getInstance();
 	private double adicionarPreco;
 	private String adicionarNome,adicionarDescricao,adicionarMarca,adicionarImagem;
 
@@ -161,6 +161,16 @@ public class ProdutoBean   {
 		return produto;
 
 	}
+	
+	public void pega(){
+		fp.iniciarFachada();
+		produto = fp.buscarPorChave(getAlterarIdProduto());
+		setAlterarNome(produto.getNome());
+		setAlterarMarca(produto.getMarca());
+		setAlterarPreco(produto.getPreco());
+		setAlterarDescricao(produto.getDescricao());
+		setAlterarImagem(produto.getImagem());
+	}
 
 	public void cadastrar(){
 		try {
@@ -169,7 +179,7 @@ public class ProdutoBean   {
 			produto.setMarca(getAdicionarMarca());
 			produto.setPreco(getAdicionarPreco());
 			produto.setDescricao(getAdicionarDescricao());
-			produto.setImagem(getAdicionarImagem());			
+			produto.setImagem(l.getImagem());			
 			fp.cadastrar(produto);
 		} catch (Exception x) {
 
@@ -180,11 +190,13 @@ public class ProdutoBean   {
 	public void alterar(){
 		try {
 			fp.iniciarFachada();
+			Produto p = fp.buscarPorChave(getAlterarIdProduto());
 			produto.setIdProduto(getAlterarIdProduto());
 			produto.setMarca(getAlterarMarca());
+			produto.setNome(p.getNome());
 			produto.setPreco(getAlterarPreco());
 			produto.setDescricao(getAlterarDescricao());
-			produto.setImagem(getAlterarImagem());
+			produto.setImagem(l.getImagem());
 			fp.alterar(produto);
 		} catch (Exception x) {
 

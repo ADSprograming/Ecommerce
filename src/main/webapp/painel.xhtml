@@ -137,64 +137,101 @@
 				<p:fieldset legend="Adicionar Produto"
 					style="margin-bottom:20px;text-align: left;">
 					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 29%;float: left; margin-right: 2%;">
-
+						style="width: 35%;float: left;margin-right: 0.6%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-1">
 									<label for="">Nome:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.nome}"></p:inputText>
+									<p:inputText type="text" value="#{produtoBean.produto.nome}"
+										label="Nome" required="true"></p:inputText>
 								</div>
 							</div>
-							<div class="ui-grid-row">
-								<div class="ui-grid-col-2">
-									<label for="">Preco:</label>
-								</div>
-								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.preco}"></p:inputText>
-								</div>
-							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5"
+						style="width: 29%;float: left;margin-right: 6.5%;">
+						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-2">
 									<label for="">Marca:</label>
 								</div>
 								<div class="ui-grid-col-3">
-									<p:inputText type="text" value="#{produtoBean.produto.marca}"></p:inputText>
-								</div>
-							</div>
-							<div class="ui-grid-row">
-								<div class="ui-grid-col-2">
-									<label for="">Descricao:</label>
-								</div>
-								<div class="ui-grid-col-3">
-									<p:inputTextarea id="desc"
-										value="#{produtoBean.produto.descricao}" required="true"
-										label="Description"></p:inputTextarea>
+									<p:inputText type="text" value="#{produtoBean.produto.marca}"
+										label="Marca"></p:inputText>
+
 								</div>
 							</div>
 						</div>
-
 					</h:panelGrid>
+
 					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 67%;margin-bottom: 1%;">
+						style="width: 29%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-2">
+									<label for="">Preço:</label>
+								</div>
+								<div class="ui-grid-col-3">
+									<p:inputText type="text" value="#{produtoBean.produto.preco}"
+										label="Preço"></p:inputText>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+
+					<h:panelGrid columns="2" cellpadding="5"
+						style="width: 100%;float: left;margin-bottom: 2%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-2">
+									<label for="">Descrição:</label>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-3">
+									<p:inputTextarea value="#{produtoBean.produto.descricao}"
+										style="width: 97.9%;height: 200%;margin-left: 2%;"
+										label="Descrição"></p:inputTextarea>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-2">
 									<label for="">Imagem:</label>
 								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5"
+						style="width: 100%;margin-top: -2.5%">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
 								<div class="ui-grid-col-3">
-									<p:growl id="messages" showDetail="true" />
-									<p:fileUpload style="margin-top: -1%;"
-										fileUploadListener="#{fileUploadController.handleFileUploadAdicionar}"
-										mode="advanced" dragDropSupport="false" update="messages"
+									<p:growl id="msg" showDetail="true" />
+									<p:fileUpload
+										style="margin-top: -1%;margin-left: 8.3%;width: 94.7%;"
+										fileUploadListener="#{fileUploadController.handleFileUploadAlterar}"
+										mode="advanced" dragDropSupport="false" update="msg"
 										sizeLimit="100000" fileLimit="1"
 										allowTypes="/(\.|\/)(jpe?g|png)$/" />
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
+					
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -215,7 +252,7 @@
 							height="500" />
 						<p:separator style="margin-bottom: 2%;" />
 
-						<h:commandLink action="#{produtoBean.setProdutoCadastar}">
+						<h:commandLink action="#{produtoBean.cadastrar}">
 							<button class="btn-confirmaAdm" name="confirma" type="submit"
 								style="padding: 2% 0%; margin-top: 0; vertical-align: middle">
 								<span>Confirma</span>
@@ -229,6 +266,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
+					
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -238,8 +276,7 @@
 				<p:fieldset legend="Alterar Produto"
 					style="margin-bottom:20px;text-align: left;">
 					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 29%;margin-right:-6.2%;">
-
+						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-1">
@@ -247,9 +284,8 @@
 								</div>
 								<div class="ui-grid-col-2">
 									<p:selectOneMenu value="#{produtoBean.produto.idProduto}"
-										update="display" panelStyle="width:190px"
-										style="width:106%;margin-left: 4%;" effect="fold"
-										filter="true" filterMatchMode="startsWith">
+										update="display" panelStyle="width:190px" style="width:100%;"
+										effect="fold" filter="true" filterMatchMode="startsWith">
 										<f:selectItem itemLabel="Selecione o produto"
 											itemValue="#{null}" />
 										<f:selectItems value="#{produtoBean.produtos}" var="p"
@@ -257,57 +293,86 @@
 									</p:selectOneMenu>
 								</div>
 								<div class="ui-grid-col-3">
-									<h:commandLink
-										action="#{produtoBean.buscarProduto}">
+									<h:commandLink action="#{produtoBean.buscarProduto}">
 										<buttom class="btn-produto" type="submit">Buscar</buttom>
 									</h:commandLink>
 								</div>
 							</div>
 						</div>
 					</h:panelGrid>
+					
 					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 29%;float: left; margin-right: 2%;">
+						style="width: 29%;float: left;margin-right: 6.5%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
-								<div class="ui-grid-row">
-									<div class="ui-grid-col-2">
-										<label for="">Preco:</label>
-									</div>
-									<div class="ui-grid-col-3">
-										<p:inputText type="text" value="#{produtoBean.produto.preco}"></p:inputText>
-									</div>
+								<div class="ui-grid-col-2">
+									<label for="">Marca:</label>
 								</div>
-								<div class="ui-grid-row">
-									<div class="ui-grid-col-2">
-										<label for="">Marca:</label>
-									</div>
-									<div class="ui-grid-col-3">
-										<p:inputText type="text" value="#{produtoBean.produto.marca}"></p:inputText>
-									</div>
-								</div>
-								<div class="ui-grid-row">
-									<div class="ui-grid-col-2">
-										<label for="">Descricao:</label>
-									</div>
-									<div class="ui-grid-col-3">
-										<p:inputTextarea value="#{produtoBean.produto.descricao}"
-											label="Description"></p:inputTextarea>
-									</div>
-								</div>
+								<div class="ui-grid-col-3">
+									<p:inputText type="text" value="#{produtoBean.produto.marca}"
+										label="Marca"></p:inputText>
 
+								</div>
 							</div>
 						</div>
 					</h:panelGrid>
+					
 					<h:panelGrid columns="2" cellpadding="5"
-						style="width: 67%;margin-top: -4%;margin-bottom: 1%;">
+						style="width: 29%;margin-bottom: 1%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-2">
+									<label for="">Preço:</label>
+								</div>
+								<div class="ui-grid-col-3">
+									<p:inputText type="text" value="#{produtoBean.produto.preco}"
+										label="Preço"></p:inputText>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+
+					<h:panelGrid columns="2" cellpadding="5"
+						style="width: 100%;float: left;margin-bottom: 2%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-2">
+									<label for="">Descrição:</label>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
+								<div class="ui-grid-col-3">
+									<p:inputTextarea value="#{produtoBean.produto.descricao}"
+										style="width: 97.9%;height: 200%;margin-left: 2%;"
+										label="Descrição"></p:inputTextarea>
+								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
 								<div class="ui-grid-col-2">
 									<label for="">Imagem:</label>
 								</div>
+							</div>
+						</div>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="2" cellpadding="5"
+						style="width: 100%;margin-top: -2.5%">
+						<div class="ui-grid ui-grid-responsive">
+							<div class="ui-grid-row">
 								<div class="ui-grid-col-3">
 									<p:growl id="msg" showDetail="true" />
-									<p:fileUpload style="margin-top: -1%;"
+									<p:fileUpload
+										style="margin-top: -1%;margin-left: 8.3%;width: 94.7%;"
 										fileUploadListener="#{fileUploadController.handleFileUploadAlterar}"
 										mode="advanced" dragDropSupport="false" update="msg"
 										sizeLimit="100000" fileLimit="1"
@@ -316,6 +381,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
+					
 					<h:panelGrid columns="2" cellpadding="5" style="width: 100%;">
 						<div class="ui-grid ui-grid-responsive">
 							<div class="ui-grid-row">
@@ -327,6 +393,7 @@
 							</div>
 						</div>
 					</h:panelGrid>
+					
 					<p:dialog id="displayAlterar" header="Confirmação" modal="true"
 						showEffect="bounce" widgetVar="dlg" resizable="false">
 						<p:separator />
@@ -349,6 +416,7 @@
 							</button>
 						</h:commandLink>
 					</p:dialog>
+					
 				</p:fieldset>
 			</div>
 		</h:form>
@@ -447,6 +515,6 @@
 			$(".menu").hide();
 		});
 	</script>
-
+	
 </h:body>
 </html>

@@ -29,6 +29,10 @@ public class FachadaProduto {
 		return pd.buscarPorChave(id);
 	}
 	
+	public void cadastrar(Produto produto){
+		pd.inserir(produto);
+	}
+	
 	public void alterar(Produto produto){
 		pd.alterar(produto);
 	}

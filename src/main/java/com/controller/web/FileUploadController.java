@@ -17,14 +17,14 @@ import com.classeBasica.web.Produto;
 @ManagedBean(name="fileUploadController")
 public class FileUploadController {
 	private String destination="C:/Users/MegaKingBR/workspace/Ecommerce/src/main/webapp/img/";
-	Produto p = new Produto();
+	ProdutoBean pb = new ProdutoBean();
 	
 	public void handleFileUploadAdicionar(FileUploadEvent event) {  
 		FacesMessage message = new FacesMessage("Sucesso", event.getFile().getFileName() + " O arquivo foi carrgado com sucesso!");  
 		FacesContext.getCurrentInstance().addMessage(null, message);
 		// Do what you want with the file        
 		try {
-			copyFile(event.getFile().getFileName(), event.getFile().getInputstream());
+			copyFileAdicionar(event.getFile().getFileName(), event.getFile().getInputstream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -35,14 +35,14 @@ public class FileUploadController {
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 		// Do what you want with the file        
 		try {
-			copyFile(event.getFile().getFileName(), event.getFile().getInputstream());
+			copyFileAlterar(event.getFile().getFileName(), event.getFile().getInputstream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	public void copyFile(String fileName, InputStream in) {
+	public void copyFileAdicionar(String fileName, InputStream in) {
 		try {
 
 
@@ -56,7 +56,35 @@ public class FileUploadController {
 				out.write(bytes, 0, read);
 			}
 			
-			p.setImagem(fileName);
+			pb.setAdicionarImagem(fileName);
+
+			
+			in.close();
+			out.flush();
+			out.close();
+
+			
+			System.out.println("Novo arquivo criado!");
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void copyFileAlterar(String fileName, InputStream in) {
+		try {
+
+
+			// write the inputStream to a FileOutputStream
+			OutputStream out = new FileOutputStream(new File(destination + fileName));
+
+			int read = 0;
+			byte[] bytes = new byte[1024];
+
+			while ((read = in.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
+			
+			pb.setAlterarImagem(fileName);
 
 			
 			in.close();

@@ -57,7 +57,12 @@ public class FileUploadController {
 				out.write(bytes, 0, read);
 			}
 			
-			l.setImagem(fileName);
+			
+			StringBuffer saida = new StringBuffer(fileName);
+			String remover = ".jpg";
+			int pos = saida.indexOf(remover);
+			saida.delete(pos, pos + remover.length());
+			l.setImagem(saida.toString());
 
 			
 			in.close();
@@ -85,7 +90,11 @@ public class FileUploadController {
 				out.write(bytes, 0, read);
 			}
 			
-			l.setImagem(fileName);
+			StringBuffer saida = new StringBuffer(fileName);
+			String remover = ".jpg";
+			int pos = saida.indexOf(remover);
+			saida.delete(pos, pos + remover.length());
+			l.setImagem(saida.toString());
 
 			
 			in.close();

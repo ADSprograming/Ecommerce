@@ -127,7 +127,7 @@ public class GenericoDAO <Entidade>{
 		return instance;
 	}
 
-	public Cliente consultarPorNome(String login) {
+	public Cliente consultarPorLogin(String login) {
 		Cliente cliente = null;
 		try{
 			cliente = (Cliente) entityManager.createQuery("FROM Cliente WHERE login ='"+login+"'").getSingleResult();
@@ -137,7 +137,7 @@ public class GenericoDAO <Entidade>{
 		return cliente;
 	}
 	
-	public Cliente consultarPorNomeeSenha(String login,String senha) {
+	public Cliente consultarPorLogineSenha(String login,String senha) {
 		Cliente cliente = null;
 		try{
 			cliente = (Cliente) entityManager.createQuery("FROM Cliente WHERE login ='"+login+"' and senha'"+senha+"';").getSingleResult();

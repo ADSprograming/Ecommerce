@@ -56,7 +56,7 @@ public class ClienteNegocio implements INegocioCliente{
 	public boolean validarLogin (String login,String senha) {
 		Cliente c = null;
 
-		c = df.consultarPorNome(login);
+		c = df.consultarPorLogin(login);
 
 		if (c != null && c.getLogin().equals(login) && c.getSenha().equals(senha)){
 			return true;

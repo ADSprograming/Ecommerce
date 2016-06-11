@@ -40,7 +40,7 @@ public class FachadaLogin {
 	}	
 
 	public Cliente consultarNome(String nome){
-		return cd.consultarPorNome(nome);
+		return cd.consultarPorLogin(nome);
 	}
 
 	public Proprietario consultarNomeAdmin(String nome){

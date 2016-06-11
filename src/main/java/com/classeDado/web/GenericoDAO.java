@@ -136,6 +136,16 @@ public class GenericoDAO <Entidade>{
 		}
 		return cliente;
 	}
+	
+	public Cliente consultarPorNomeeSenha(String login,String senha) {
+		Cliente cliente = null;
+		try{
+			cliente = (Cliente) entityManager.createQuery("FROM Cliente WHERE login ='"+login+"' and senha'"+senha+"';").getSingleResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return cliente;
+	}
 
 	public Proprietario consultarPorNomeAdmin(String login) {
 		Proprietario proprietario = null;

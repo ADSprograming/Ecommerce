@@ -2,6 +2,7 @@ package com.Testes.web;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.classeBasica.web.Cliente;
@@ -17,19 +18,23 @@ public class ClienteTest {
 	ClienteDAO cd = FactoryDAO.getClienteDAO();
 	ClienteNegocio cn = new ClienteNegocio();
 	EnderecoDAO ed = FactoryDAO.getEnderecoDAO();
-
+	@Before
+	public void setUp() throws Exception {    
+		cl = new Cliente();
+	}
 	@Test
 	public void testCadastroComSucesso() throws Exception {
-		e = ed.buscarPorChave(1);
-		cl.setCpf("55555555598");
-		cl.setEmail("castanha@castanha.com");
-		cl.setEndereco(e);
-		cl.setLogin("castanha");
-		cl.setNome("castanha");
-		cl.setSenha("castanha");
-		cn.cadastrar(cl);
-		cl = cd.consultarPorLogin("castanha");
-		assertEquals("castanha", cl.getLogin());
+			e = ed.buscarPorChave(1);
+			cl.setCpf("55555555598");
+			cl.setEmail("castanha@castanha.com");
+			cl.setEndereco(e);
+			cl.setLogin("castanha");
+			cl.setNome("castanha");
+			cl.setSenha("castanha");
+			cn.cadastrar(cl);
+			cl = cd.consultarPorLogin("castanha");
+			assertEquals("castanha", cl.getLogin());
+			cd.remover(cl);
 	}
 
 	@Test

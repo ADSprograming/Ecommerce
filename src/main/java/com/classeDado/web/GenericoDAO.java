@@ -126,7 +126,16 @@ public class GenericoDAO <Entidade>{
 		}
 		return instance;
 	}
-
+	public Carrinho consultarUltimoCarrinho() {
+		Carrinho carrinho = null;
+		try{
+	
+	carrinho = (Carrinho) entityManager.createQuery("select * from carrinho where idCarrinho = (select max(idCarrinho) from carrinho)").getSingleResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return carrinho;
+	}
 	public Cliente consultarPorLogin(String login) {
 		Cliente cliente = null;
 		try{

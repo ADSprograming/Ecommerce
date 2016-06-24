@@ -8,9 +8,9 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.user" value="adminK318plG" />
-			<property name="javax.persistence.jdbc.password" value="NcRugZa6FAWV" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.6.34.130:3306/ecommerce" />
+			<property name="javax.persistence.jdbc.user" value="adminnulPBAR" />
+			<property name="javax.persistence.jdbc.password" value="lRMHn4hX9tyd" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.7.136.130:3306/ecommerce" />
 		</properties>
 	</persistence-unit>
 </persistence>

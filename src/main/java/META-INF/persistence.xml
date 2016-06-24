@@ -10,7 +10,7 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user" value="adminnulPBAR" />
 			<property name="javax.persistence.jdbc.password" value="lRMHn4hX9tyd" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.7.136.130:3306/ecommerce" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.7.136.130:3306/sostenesfreitas" />
 		</properties>
 	</persistence-unit>
 </persistence>

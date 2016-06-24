@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecommerce
+Bundle-SymbolicName: Ecommerce
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: Ecommerce.jar,
+ miojo/Downloads/apache-tomcat-7.0.70/lib/servlet-api.jar
+Export-Package: com.Testes.web,
+ com.classeBasica.web,
+ com.classeDado.web,
+ com.classeNegocio.web,
+ com.controller.web,
+ com.fachada.web,
+ com.interfaceNegocio.web
